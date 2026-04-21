@@ -7,7 +7,7 @@ from pathlib import Path
 # Configuration
 BASE_URL = "https://pires94.github.io/Amazon-ES-Air-quality-reviews/"
 CONTENT_DIR = Path("content")
-SITE_DIR = Path("docs")
+SITE_DIR = Path(".")
 ARTICLES_DIR = SITE_DIR / "articles"
 TEMPLATES_DIR = Path("templates")
 METADATA_FILE = CONTENT_DIR / "metadata.json"
