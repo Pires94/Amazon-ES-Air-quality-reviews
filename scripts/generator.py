@@ -47,7 +47,8 @@ class Generator:
                     {"slug": "purificador-aire-habitacion-pequena", "title": "Purificador de Aire para Habitación Pequeña"},
                     {"slug": "purificador-aire-100-euros", "title": "Purificador de Aire por menos de 100 Euros"},
                     {"slug": "purificador-aire-alergias", "title": "Purificador de Aire para Alergias"},
-                    {"slug": "purificador-aire-silencioso-noite", "title": "Purificador de Aire Silencioso para la Noche"}
+                    {"slug": "purificador-aire-silencioso-noite", "title": "Purificador de Aire Silencioso para la Noche"},
+                    {"slug": "purificador-aire-coche", "title": "Mejor Purificador de Aire para el Coche"}
                 ]
             },
             "deshumidificadores": {
@@ -57,7 +58,8 @@ class Generator:
                     {"slug": "deshumidificador-casa-humeda", "title": "Deshumidificador para Casa Húmeda"},
                     {"slug": "deshumidificador-habitacion-pequena", "title": "Deshumidificador para Habitación Pequeña"},
                     {"slug": "deshumidificador-150-euros", "title": "Deshumidificador por menos de 150 Euros"},
-                    {"slug": "deshumidificador-consumo-energia", "title": "Deshumidificador de Bajo Consumo"}
+                    {"slug": "deshumidificador-consumo-energia", "title": "Deshumidificador de Bajo Consumo"},
+                    {"slug": "deshumidificador-bano-pequeno", "title": "Deshumidificador para Baño Pequeño"}
                 ]
             }
         }

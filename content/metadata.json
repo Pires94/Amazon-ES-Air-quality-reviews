@@ -62,5 +62,21 @@
     "cluster": "deshumidificadores",
     "date": "2026-04-21",
     "description": "Análisis experto sobre Deshumidificador de Bajo Consumo. Ayudamos a decidir qué modelo comprar en Amazon.es."
+  },
+  {
+    "slug": "purificador-aire-coche",
+    "title": "Mejor Purificador de Aire para el Coche",
+    "h1": "Mejor Purificador de Aire para el Coche",
+    "cluster": "purificadores",
+    "date": "2026-04-21",
+    "description": "Análisis experto sobre Mejor Purificador de Aire para el Coche. Ayudamos a decidir qué modelo comprar en Amazon.es."
+  },
+  {
+    "slug": "deshumidificador-bano-pequeno",
+    "title": "Deshumidificador para Baño Pequeño",
+    "h1": "Deshumidificador para Baño Pequeño",
+    "cluster": "deshumidificadores",
+    "date": "2026-04-21",
+    "description": "Análisis experto sobre Deshumidificador para Baño Pequeño. Ayudamos a decidir qué modelo comprar en Amazon.es."
   }
 ]
