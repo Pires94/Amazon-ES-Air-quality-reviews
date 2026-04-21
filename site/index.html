@@ -9,10 +9,10 @@
         :root { --navy: #232f3e; --orange: #FF9900; --bg: #f7fafa; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); margin:0; color: #111827; }
         header { background: white; padding: 1.5rem 5%; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .logo { font-family: 'Outfit'; font-weight:700; font-size:1.5rem; color:var(--navy); text-decoration:none; }
         .hero { background: linear-gradient(rgba(35, 47, 62, 0.7), rgba(35, 47, 62, 0.7)), url('assets/hero.jpg'); background-size: cover; background-position: center; padding: 8rem 5%; text-align: center; color: white; }
         .hero h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; margin:0; }
         .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 1rem auto; }
-        
         main { max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem; }
         .section-title { font-family: 'Outfit', sans-serif; font-size: 2rem; margin-bottom: 2rem; border-bottom: 3px solid var(--orange); display: inline-block; }
         .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 5rem; }
@@ -27,17 +27,12 @@
     </style>
 </head>
 <body>
-    <header>
-        <div style="font-family:'Outfit'; font-weight:700; font-size:1.5rem; color:var(--navy);">Melhor<span style="color:var(--orange);">Ar</span>Casa</div>
-    </header>
-    <section class="hero">
-        <h1>Tu Casa, Aire Puro</h1>
-        <p>Análisis y comparativas de los mejores purificadores, humidificadores y deshumidificadores de Amazon.es.</p>
-    </section>
+    <header><a href="index.html" class="logo">Melhor<span style="color:var(--orange);">Ar</span>Casa</a></header>
+    <section class="hero"><h1>Tu Casa, Aire Puro</h1><p>Análisis y comparativas de los mejores aparatos de aire.</p></section>
     <main>
         <h2 class="section-title" id="purificadores">🌬️ Recomendados: Purificadores</h2><div class="card-grid">
             <a href="articles/purificador-aire-habitacion-pequena.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1558231013-17631379f835?auto=format&fit=crop&q=80&w=800'), url('assets/purificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Purificadores de Aire</span>
                     <h3>Mejor Purificador de Aire para Habitación Pequeña</h3>
@@ -46,7 +41,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/purificador-aire-100-euros.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800'), url('assets/purificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Purificadores de Aire</span>
                     <h3>Purificadores de Aire por menos de 100 Euros</h3>
@@ -55,7 +50,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/purificador-aire-alergias.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&q=80&w=800'), url('assets/purificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Purificadores de Aire</span>
                     <h3>Purificadores de Aire para Alergias: Guía Definitiva</h3>
@@ -64,7 +59,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/purificador-aire-silencioso-noite.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1614035030394-b6e5b01e0737?auto=format&fit=crop&q=80&w=800'), url('assets/purificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Purificadores de Aire</span>
                     <h3>Purificadores de Aire Silenciosos para la Noche</h3>
@@ -74,7 +69,7 @@
             </a></div>
         <h2 class="section-title" id="deshumidificadores">💧 Soluciones de Humedad</h2><div class="card-grid">
             <a href="articles/deshumidificador-casa-humeda.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&q=80&w=800'), url('assets/deshumidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Deshumidificadores</span>
                     <h3>Soluciones para una Casa Húmeda</h3>
@@ -83,7 +78,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/deshumidificador-habitacion-pequena.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800'), url('assets/deshumidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Deshumidificadores</span>
                     <h3>Deshumidificador para Habitación Pequeña</h3>
@@ -92,7 +87,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/deshumidificador-150-euros.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=800'), url('assets/deshumidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Deshumidificadores</span>
                     <h3>Mejores Deshumidificadores por 150 Euros</h3>
@@ -101,7 +96,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/deshumidificador-consumo-energia.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1520004434532-668416a08753?auto=format&fit=crop&q=80&w=800'), url('assets/deshumidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Deshumidificadores</span>
                     <h3>Deshumidificadores de Bajo Consumo</h3>
@@ -110,7 +105,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/deshumidificador-portatil-opiniones.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1520004434532-668416a08753?auto=format&fit=crop&q=80&w=800'), url('assets/deshumidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Deshumidificadores</span>
                     <h3>Opiniones sobre Deshumidificadores Portátiles</h3>
@@ -120,7 +115,7 @@
             </a></div>
         <h2 class="section-title" id="humidificadores">🌫️ Confort: Humidificadores</h2><div class="card-grid">
             <a href="articles/humidificador-habitacion-seca.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&q=80&w=800'), url('assets/humidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Humidificadores</span>
                     <h3>Humidificador para Habitación Seca</h3>
@@ -129,7 +124,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/humidificador-bebes-seguro.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&q=80&w=800'), url('assets/humidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Humidificadores</span>
                     <h3>Humidificadores Seguros para Bebés</h3>
@@ -138,7 +133,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/humidificador-silencioso.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1511974035430-5de47d3b95da?auto=format&fit=crop&q=80&w=800'), url('assets/humidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Humidificadores</span>
                     <h3>El Humidificador más Silencioso de 2024</h3>
@@ -147,7 +142,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/humidificador-invierno-vale-la-pena.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&q=80&w=800'), url('assets/humidificadores.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Humidificadores</span>
                     <h3>¿Vale la pena un humidificador en invierno?</h3>
@@ -157,7 +152,7 @@
             </a></div>
         <h2 class="section-title" id="comparativas">⚖️ Comparativas</h2><div class="card-grid">
             <a href="articles/purificador-vs-deshumidificador.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/comparativas.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'), url('assets/comparativas.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Comparativas</span>
                     <h3>Purificador vs Deshumidificador: ¿Cuál necesitas?</h3>
@@ -166,7 +161,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/humidificador-vs-deshumidificador.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/comparativas.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=800'), url('assets/comparativas.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Comparativas</span>
                     <h3>Humidificador vs Deshumidificador: Guía Comparativa</h3>
@@ -175,7 +170,7 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a>
             <a href="articles/mejor-aparato-humedad-casa.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/comparativas.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'), url('assets/comparativas.jpg'), url('assets/hero.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="card-body">
                     <span class="card-tag">Comparativas</span>
                     <h3>Mejor Aparato para la Humedad en Casa</h3>
@@ -184,8 +179,6 @@
                 <div class="card-footer">Leer Artículo &rarr;</div>
             </a></div>
     </main>
-    <footer style="background:var(--navy); color:white; padding: 4rem 5%; text-align:center;">
-        <p>&copy; 2024 Melhor Ar Casa. La mejor guía de calidad de aire.</p>
-    </footer>
+    <footer style="background:var(--navy); color:white; padding: 4rem 5%; text-align:center;"><p>© 2024 Melhor Ar Casa.</p></footer>
 </body>
 </html>
