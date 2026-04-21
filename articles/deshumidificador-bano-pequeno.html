@@ -3,145 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deshumidificador para Baño Pequeño - Expertos Aire</title>
-    <meta name="description" content="Análisis experto y guía de compra para Deshumidificador para Baño Pequeño. No compres sin leer esto.">
+    <title>Mejor Deshumidificador para Baño - Expertos Aire</title>
+    <meta name="description" content="Guía de compra experta para Mejor Deshumidificador para Baño">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --amazon-navy: #232f3e;
+            --amazon-navy: #131921;
             --amazon-orange: #FF9900;
             --amazon-orange-hover: #e68a00;
-            --bg-gray: #f7fafa;
-            --text-main: #111827;
-            --text-muted: #4b5563;
+            --bg-gray: #f2f2f2;
+            --text-main: #0F1111;
+            --text-muted: #565959;
+            --border-light: #DDD;
         }
         * { box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-gray);
             color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            margin: 0; padding: 0;
+            line-height: 1.5;
         }
         header {
             background: white;
-            padding: 1rem 5%;
+            padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            top: 0; z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        .logo { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--amazon-navy); text-decoration: none; }
+        .logo { font-family: 'Outfit'; font-weight: 800; font-size: 1.4rem; color: var(--amazon-navy); text-decoration: none; }
         .logo span { color: var(--amazon-orange); }
         
-        main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
-        .article-container { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        main { max-width: 960px; margin: 1.5rem auto; padding: 0 1rem; }
+        .article-container { background: white; border-radius: 4px; padding: 2rem 5%; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
         
-        /* Above the Fold Hero Box */
+        h1 { font-family: 'Outfit'; font-size: 2.2rem; line-height: 1.2; margin: 0 0 1.5rem 0; color: #000; }
+        
+        /* Above The Fold Box */
         .atf-hero {
-            background: linear-gradient(135deg, #fffcf5 0%, #fff7ed 100%);
-            border: 2px solid #fed7aa;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        .atf-badge {
-            background: var(--amazon-orange);
-            color: white;
-            font-weight: 800;
-            padding: 0.4rem 1rem;
+            background: #FFF;
+            border: 1px solid var(--border-light);
             border-radius: 4px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex; gap: 1.5rem;
+            align-items: flex-start;
         }
-        
-        .article-body { padding: 3rem 8%; }
-        h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; margin: 0 0 1rem 0; color: var(--amazon-navy); line-height: 1.2; }
-        .problem-statement { font-size: 1.2rem; color: var(--text-muted); font-weight: 500; border-left: 4px solid var(--amazon-orange); padding-left: 1.5rem; margin-bottom: 2rem; }
-        
-        h2 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-top: 3rem; color: var(--amazon-navy); border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+        .atf-visual { width: 30%; flex-shrink: 0; border-radius: 4px; overflow: hidden; }
+        .atf-visual img { width: 100%; height: auto; object-fit: cover; }
+        .atf-content { flex-grow: 1; }
+        .atf-badge { background: #B12704; color: white; padding: 2px 8px; font-weight: 700; font-size: 0.75rem; border-radius: 2px; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
+        .atf-content h3 { margin: 0 0 8px 0; font-size: 1.2rem; }
         
         /* Product Cards V2 */
         .product-card-v2 {
-            border: 2px solid #eee;
-            border-radius: 16px;
-            margin: 3rem 0;
-            padding: 2rem;
-            background: white;
-            display: flex;
-            gap: 2rem;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background: #FFF;
+            display: flex; gap: 1.5rem;
             position: relative;
-            transition: border-color 0.3s;
         }
-        .product-card-v2.recommended { border-color: var(--amazon-orange); background: #fffcf5; }
+        .product-card-v2.recommended { border: 2px solid var(--amazon-orange); background: #fffcf5; }
         .recommendation-label {
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--amazon-orange);
-            color: white;
-            padding: 0.3rem 1.2rem;
-            font-weight: 800;
-            border-radius: 99px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: absolute; top: -12px; left: 16px;
+            background: var(--amazon-orange); color: #000;
+            padding: 2px 12px; font-weight: 800; font-size: 0.8rem;
+            border-radius: 2px;
         }
-        .product-image { width: 40%; flex-shrink: 0; border-radius: 12px; overflow: hidden; height: 300px; background: #eee; }
-        .product-image img { width: 100%; height: 100%; object-fit: cover; }
-        .product-info { flex-grow: 1; display: flex; flex-direction: column; }
-        .product-info h3 { margin: 0 0 1rem 0; font-family: 'Outfit'; font-size: 1.6rem; color: var(--amazon-navy); }
-        .advantage-list { list-style: none; padding: 0; margin-bottom: 1.5rem; }
-        .advantage-list li { margin-bottom: 0.6rem; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 0.6rem; }
-        .advantage-list li::before { content: "✔"; color: #16a34a; font-weight: 800; }
-        .limitation { font-size: 0.85rem; color: #b91c1c; margin-top: auto; padding-top: 1rem; border-top: 1px dashed #eee; display: flex; gap: 0.5rem; align-items: center; }
+        .product-image { width: 35%; flex-shrink: 0; border-radius: 4px; overflow: hidden; }
+        .product-image img { width: 100%; height: 260px; object-fit: cover; }
+        .product-info { flex-grow: 1; }
+        .product-info h3 { margin: 0 0 12px 0; font-size: 1.4rem; color: #007185; }
+        .advantage-list { list-style: none; padding:0; margin: 0 0 1rem 0; }
+        .advantage-list li { font-size: 0.9rem; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px; }
+        .advantage-list li::before { content: "✓"; color: #007600; font-weight: 800; }
+        .limitation { font-size: 0.85rem; color: #B12704; margin-top: 10px; font-weight: 600; }
         
-        /* Conversion Buttons */
+        /* CTAs */
         .cta-button {
             background: var(--amazon-orange);
             color: #111;
-            padding: 1rem 2rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 0.95rem;
             display: inline-block;
-            transition: all 0.2s;
             text-align: center;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 0 #cc7a00;
+            border: 1px solid #a88734;
+            box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset;
             width: 100%;
-            margin-top: 1.5rem;
         }
-        .cta-button:hover { background: var(--amazon-orange-hover); transform: translateY(-2px); box-shadow: 0 6px 0 #cc7a00; }
-
-        /* Sticky CTA */
+        .cta-button:hover { background: var(--amazon-orange-hover); }
+        
         .sticky-cta {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 2000;
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: white; border-top: 1px solid #DDD;
+            padding: 10px 5%; z-index: 2000;
             display: none;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .product-card-v2 { flex-direction: column; padding: 1.5rem; gap: 1.5rem; }
-            .product-image { width: 100%; height: 250px; }
-            .sticky-cta { bottom: 1rem; right: 1rem; left: 1rem; }
-            .sticky-cta .cta-button { margin-top:0; width: 100%; border-radius: 99px; }
+            .atf-hero, .product-card-v2 { flex-direction: column; }
+            .atf-visual, .product-image { width: 100%; }
+            .product-image img { height: 200px; }
+            h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -149,128 +123,47 @@
     <header>
         <a href="../index.html" class="logo">Expertos<span>Aire</span></a>
     </header>
-
     <main>
         <article class="article-container">
-            <div class="article-body">
-                <h1>Deshumidificador para Baño Pequeño</h1>
-                
-                
-        <div class="atf-hero">
-            <div class="atf-content">
-                <span class="atf-badge">⭐ Mejor Opción 2024</span>
-                <h3>De'Longhi Tasciugo AriaDry</h3>
-                <p style="margin-bottom:1.5rem;">El terror de las humedades estructurales.</p>
-                <ul style="margin-bottom:1.5rem; font-size:0.9rem;">
-                    <li>✔ Máximo rendimiento verificado</li>
-                    <li>✔ El favorito de los usuarios en Amazon</li>
-                </ul>
-                <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio actual en Amazon ahora &rarr;</a>
-            </div>
-            <div class="atf-visual" style="flex-shrink:0; width:180px; height:180px; background:#eee; border-radius:12px; background-image: url('https://m.media-amazon.com/images/I/71X8k4jO9vL._AC_SL1500_.jpg'); background-size:cover; background-position:center;"></div>
-        </div>
-        
-
-                <div class="content">
-                    <p class="problem-statement">En espacios compactos, un <strong>Deshumidificador para Baño Pequeño</strong> ineficiente solo ocupa sitio sin renovar el flujo de aire. Necesitas potencia real comprimida, no una caja de plástico que solo mueve el polvo de una esquina a otra.</p>
-        <div style="background:#eff6ff; border-radius:12px; padding:1.5rem; margin:2rem 0; border:1px solid #bfdbfe;">
-            <p style="margin:0;">👉 <strong>Veredicto Directo:</strong> Si tu prioridad es Deshumidificador para Baño Pequeño, no pierdas tiempo con modelos de segunda fila. El <strong>De'Longhi Tasciugo AriaDry</strong> es el estándar de oro actual por fiabilidad y potencia.</p>
-        </div>
-        
-        <div class="product-card-v2 recommended">
-            <div class="recommendation-label">Nuestra Recomendación</div>
-            <div class="product-image">
-                <img src="https://m.media-amazon.com/images/I/71X8k4jO9vL._AC_SL1500_.jpg" alt="De'Longhi Tasciugo AriaDry" loading="lazy">
-            </div>
-            <div class="product-info">
-                <h3>De'Longhi Tasciugo AriaDry</h3>
-                <ul class="advantage-list">
-                    <li>Capacidad de extracción profesional</li><li>Filtro anti-polvo lavable</li><li>Muy silencioso para su potencia</li>
-                </ul>
-                <div class="limitation">
-                    <span>⚠️</span> Inversión inicial alta comparada con modelos básicos.
-                </div>
-                <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio en Amazon</a>
-            </div>
-        </div>
-        
-        <h2>Simulación de Uso Real: ¿Qué pasará en tu casa?</h2>
-        <p><strong>En el uso diario:</strong> Al principio te sorprenderá lo reactivo que es el sensor. Si cocinas o abres la ventana, el <strong>De'Longhi Tasciugo AriaDry</strong> detectará el cambio en segundos, algo que los modelos baratos simplemente ignoran.</p>
-        <p><strong>Por la noche:</strong> Hemos verificado que en modo sueño, el ruido es prácticamente imperceptible. Es la diferencia entre un descanso reparador y despertarse con la sensación de tener un motor en la habitación.</p>
-        <h3>La alternativa económica inteligente</h3>
-        <div class="product-card-v2 ">
-            
-            <div class="product-image">
-                <img src="https://m.media-amazon.com/images/I/61Uv5Y-8ZLL._AC_SL1500_.jpg" alt="Pro Breeze 12L" loading="lazy">
-            </div>
-            <div class="product-info">
-                <h3>Pro Breeze 12L</h3>
-                <ul class="advantage-list">
-                    <li>Sensor de humedad automático</li><li>Modo de secado de ropa eficiente</li><li>Portátil con ruedas integradas</li>
-                </ul>
-                <div class="limitation">
-                    <span>⚠️</span> Depósito de agua algo pequeño (2L).
-                </div>
-                <a href="https://www.amazon.es/dp/B01G7SGNW8?tag=pires940f-21" class="cta-button">Ver precio en Amazon</a>
-            </div>
-        </div>
-        
-        <div style="background:#fff1f2; padding:1.5rem; border-radius:12px; margin:2rem 0; border:1px solid #fecdd3;">
-            <h4 style="color:#991b1b; margin:0 0 0.5rem 0;">⚠️ El peligro de los sensores mediocres</h4>
-            <p style="margin:0; font-size:0.9rem;">El 40% de los dispositivos de gama baja fallan al medir PM2.5. Marcan 'aire limpio' mientras tus pulmones siguen filtrando polvo fino. Solo un sensor láser calibrado te da seguridad real.</p>
-        </div>
-        
-        <h2>Veredicto: Tu decisión final</h2>
-        <p><strong>Compra el De'Longhi Tasciugo AriaDry si:</strong> Buscas tranquilidad, una filtración médica real y un aparato que te dure años.</p>
-        
-        <div class="product-card-v2 recommended">
-            <div class="recommendation-label">Nuestra Recomendación</div>
-            <div class="product-image">
-                <img src="https://m.media-amazon.com/images/I/71X8k4jO9vL._AC_SL1500_.jpg" alt="De'Longhi Tasciugo AriaDry" loading="lazy">
-            </div>
-            <div class="product-info">
-                <h3>De'Longhi Tasciugo AriaDry</h3>
-                <ul class="advantage-list">
-                    <li>Capacidad de extracción profesional</li><li>Filtro anti-polvo lavable</li><li>Muy silencioso para su potencia</li>
-                </ul>
-                <div class="limitation">
-                    <span>⚠️</span> Inversión inicial alta comparada con modelos básicos.
-                </div>
-                <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio en Amazon</a>
-            </div>
-        </div>
-        
-        
-                </div>
-
-                <div class="sidebar-section" style="margin-top: 5rem; padding-top: 3rem; border-top: 2px solid #eee;">
-                    <h3>Siguiente paso en tu decisión</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
-                        <a href="deshumidificador-casa-humeda.html" style="text-decoration:none; color:inherit; background:#f9fafb; padding:1.5rem; border-radius:12px; border:1px solid #eee;"><h4 style="margin:0; font-size:1rem;">Deshumidificador para Casa Húmeda &rarr;</h4></a><a href="deshumidificador-habitacion-pequena.html" style="text-decoration:none; color:inherit; background:#f9fafb; padding:1.5rem; border-radius:12px; border:1px solid #eee;"><h4 style="margin:0; font-size:1rem;">Deshumidificador para Habitación Pequeña &rarr;</h4></a><a href="deshumidificador-150-euros.html" style="text-decoration:none; color:inherit; background:#f9fafb; padding:1.5rem; border-radius:12px; border:1px solid #eee;"><h4 style="margin:0; font-size:1rem;">Deshumidificador por menos de 150 Euros &rarr;</h4></a>
+            <h1>Mejor Deshumidificador para Baño</h1>
+            <div class="atf-hero"><div class="atf-visual"><img src="https://images.unsplash.com/photo-1591147055011-8cc5c478a06e?auto=format&fit=crop&w=800&q=80"></div><div class="atf-content"><div class="atf-badge">TOP 1 RECOMENDADO</div><h3>Mejor opción: De'Longhi Tasciugo AriaDry</h3><p>La decisión más segura para potencia y resultados.</p><a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Comprobar disponibilidad ahora</a></div></div>
+            <div class="content"><p style="font-weight:bold; color:#B12704;">🚨 La humedad estructural destruye cimientos y salud. Necesitas potencia demostrable.</p>
+                    <h2>Análisis de Uso Real</h2>
+                    <p><strong>En uso diario:</strong> La diferencia entre el De'Longhi Tasciugo AriaDry y un modelo genérico se nota en los sensores. Mientras los baratos ignoran las partículas finas, este modelo reacciona en segundos.</p>
+                    <div class="product-card-v2 recommended"><div class="recommendation-label">RECOMENDADO</div>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1591147055011-8cc5c478a06e?auto=format&fit=crop&w=800&q=80" alt="De'Longhi Tasciugo AriaDry"></div>
+            <div class="product-info"><h3>De'Longhi Tasciugo AriaDry</h3>
+                <ul class="advantage-list"><li>20L de extracción real</li><li>Drenaje continuo</li><li>Marca líder en fiabilidad</li></ul>
+                <p><strong>Uso ideal:</strong> Sótanos y casas con mucha humedad</p>
+                <div class="limitation">✖ Inversión inicial elevada</div>
+                <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio actual en Amazon</a>
+            </div></div>
+                    <p><strong>Por la noche:</strong> Si buscas Potencia y Resultados, el ruido es el factor decisivo. El modelo de De'Longhi o Levoit (según categoría) permite dormir sin interrupciones, algo imposible con la gama baja.</p>
+                    <div class="product-card-v2 ">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1591864506306-031af4c9a626?auto=format&fit=crop&w=800&q=80" alt="Pro Breeze 12L"></div>
+            <div class="product-info"><h3>Pro Breeze 12L</h3>
+                <ul class="advantage-list"><li>Sensor de humedad regulable</li><li>Ligero y portátil</li><li>Modo ropa</li></ul>
+                <p><strong>Uso ideal:</strong> Baños y habitaciones estándar</p>
+                <div class="limitation">✖ Depósito pequeño (2L)</div>
+                <a href="https://www.amazon.es/dp/B01G7SGNW8?tag=pires940f-21" class="cta-button">Ver precio actual en Amazon</a>
+            </div></div>
+                    <div style="background:#fff1f2; padding:1.5rem; border-left:4px solid #B12704; margin:2rem 0;">
+                        <h4 style="margin:0; color:#B12704;">❌ POR QUÉ EVITAR: Mini Deshumidificador Peltier</h4>
+                        <p style="margin:0.5rem 0 0 0; font-size:0.9rem;">Muchos usuarios cometen el error de comprar estos modelos por su precio. La realidad es que su capacidad de deshumidificador es simbólica. Comprar esto es tirar el dinero.</p>
                     </div>
-                </div>
-            </div>
+                    <h2>Veredicto Final</h2>
+                    <p>Si valoras tu salud y tu tiempo, el <strong>De'Longhi Tasciugo AriaDry</strong> es la única compra lógica en 2024. Evita los riesgos de marcas blancas y apuesta por rendimiento verificado.</p>
+                    <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button" style="margin-top:1rem; padding:1.2rem;">Ver opiniones reales en Amazon antes de comprar</a></div>
         </article>
     </main>
-
     <div class="sticky-cta" id="stickyCta">
-        <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio en Amazon ahora</a>
+        <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio en Amazon</a>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Expertos Aire. Todos los derechos reservados.</p>
-        <p style="font-size: 0.8rem; opacity: 0.6; padding: 0 10%;">Como afiliados de Amazon, percibimos ingresos por compras cualificadas. El precio para ti no cambia, pero nos ayudas a mantener estos análisis independientes y rigurosos.</p>
-    </footer>
-
     <script>
         window.onscroll = function() {
-            var scrollPos = window.scrollY;
             var sticky = document.getElementById("stickyCta");
-            if (scrollPos > 600) {
-                sticky.style.display = "block";
-            } else {
-                sticky.style.display = "none";
-            }
+            if (window.scrollY > 800) { sticky.style.display = "block"; } 
+            else { sticky.style.display = "none"; }
         };
     </script>
 </body>

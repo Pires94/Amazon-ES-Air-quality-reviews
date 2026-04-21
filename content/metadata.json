@@ -1,82 +1,27 @@
 [
   {
-    "slug": "purificador-aire-habitacion-pequena",
-    "title": "Purificador de Aire para Habitación Pequeña",
-    "h1": "Purificador de Aire para Habitación Pequeña",
-    "cluster": "purificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Purificador de Aire para Habitación Pequeña. No compres sin leer esto."
-  },
-  {
-    "slug": "purificador-aire-100-euros",
-    "title": "Purificador de Aire por menos de 100 Euros",
-    "h1": "Purificador de Aire por menos de 100 Euros",
-    "cluster": "purificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Purificador de Aire por menos de 100 Euros. No compres sin leer esto."
-  },
-  {
     "slug": "purificador-aire-alergias",
-    "title": "Purificador de Aire para Alergias",
-    "h1": "Purificador de Aire para Alergias",
-    "cluster": "purificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Purificador de Aire para Alergias. No compres sin leer esto."
+    "title": "Mejor Purificador para Alergias",
+    "cluster": "purificadores"
   },
   {
     "slug": "purificador-aire-silencioso-noite",
-    "title": "Purificador de Aire Silencioso para la Noche",
-    "h1": "Purificador de Aire Silencioso para la Noche",
-    "cluster": "purificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Purificador de Aire Silencioso para la Noche. No compres sin leer esto."
+    "title": "Purificador Silencioso para Dormir",
+    "cluster": "purificadores"
   },
   {
-    "slug": "purificador-aire-coche",
-    "title": "Mejor Purificador de Aire para el Coche",
-    "h1": "Mejor Purificador de Aire para el Coche",
-    "cluster": "purificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Mejor Purificador de Aire para el Coche. No compres sin leer esto."
+    "slug": "purificador-aire-100-euros",
+    "title": "Purificadores por menos de 100€",
+    "cluster": "purificadores"
   },
   {
     "slug": "deshumidificador-casa-humeda",
-    "title": "Deshumidificador para Casa Húmeda",
-    "h1": "Deshumidificador para Casa Húmeda",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Deshumidificador para Casa Húmeda. No compres sin leer esto."
-  },
-  {
-    "slug": "deshumidificador-habitacion-pequena",
-    "title": "Deshumidificador para Habitación Pequeña",
-    "h1": "Deshumidificador para Habitación Pequeña",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Deshumidificador para Habitación Pequeña. No compres sin leer esto."
-  },
-  {
-    "slug": "deshumidificador-150-euros",
-    "title": "Deshumidificador por menos de 150 Euros",
-    "h1": "Deshumidificador por menos de 150 Euros",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Deshumidificador por menos de 150 Euros. No compres sin leer esto."
-  },
-  {
-    "slug": "deshumidificador-consumo-energia",
-    "title": "Deshumidificador de Bajo Consumo",
-    "h1": "Deshumidificador de Bajo Consumo",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Deshumidificador de Bajo Consumo. No compres sin leer esto."
+    "title": "Eliminar Humedad en Casa",
+    "cluster": "deshumidificadores"
   },
   {
     "slug": "deshumidificador-bano-pequeno",
-    "title": "Deshumidificador para Baño Pequeño",
-    "h1": "Deshumidificador para Baño Pequeño",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto y guía de compra para Deshumidificador para Baño Pequeño. No compres sin leer esto."
+    "title": "Mejor Deshumidificador para Baño",
+    "cluster": "deshumidificadores"
   }
 ]
