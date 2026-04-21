@@ -65,7 +65,6 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
-        .atf-content h3 { margin: 0 0 0.5rem 0; font-family: 'Outfit'; font-size: 1.5rem; }
         
         .article-body { padding: 3rem 8%; }
         h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; margin: 0 0 1rem 0; color: var(--amazon-navy); line-height: 1.2; }
@@ -73,24 +72,60 @@
         
         h2 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-top: 3rem; color: var(--amazon-navy); border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
         
+        /* Product Cards V2 */
+        .product-card-v2 {
+            border: 2px solid #eee;
+            border-radius: 16px;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            transition: border-color 0.3s;
+        }
+        .product-card-v2.recommended { border-color: var(--amazon-orange); background: #fffcf5; }
+        .recommendation-label {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--amazon-orange);
+            color: white;
+            padding: 0.3rem 1.2rem;
+            font-weight: 800;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .product-image { width: 40%; flex-shrink: 0; border-radius: 12px; overflow: hidden; height: 300px; background: #eee; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { flex-grow: 1; display: flex; flex-direction: column; }
+        .product-info h3 { margin: 0 0 1rem 0; font-family: 'Outfit'; font-size: 1.6rem; color: var(--amazon-navy); }
+        .advantage-list { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+        .advantage-list li { margin-bottom: 0.6rem; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 0.6rem; }
+        .advantage-list li::before { content: "✔"; color: #16a34a; font-weight: 800; }
+        .limitation { font-size: 0.85rem; color: #b91c1c; margin-top: auto; padding-top: 1rem; border-top: 1px dashed #eee; display: flex; gap: 0.5rem; align-items: center; }
+        
         /* Conversion Buttons */
         .cta-button {
             background: var(--amazon-orange);
             color: #111;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1rem;
             display: inline-block;
             transition: all 0.2s;
             text-align: center;
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 0 #cc7a00;
+            width: 100%;
+            margin-top: 1.5rem;
         }
         .cta-button:hover { background: var(--amazon-orange-hover); transform: translateY(-2px); box-shadow: 0 6px 0 #cc7a00; }
-        .cta-button:active { transform: translateY(2px); box-shadow: 0 0 0 #cc7a00; }
 
         /* Sticky CTA */
         .sticky-cta {
@@ -98,31 +133,15 @@
             bottom: 2rem;
             right: 2rem;
             z-index: 2000;
-            display: none; /* Shown via JS */
+            display: none;
         }
 
-        /* Contrast Engine Blocks */
-        .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .contrast-box { padding: 1.5rem; border-radius: 12px; border: 1px solid #eee; }
-        .box-winner { background: #f0fdf4; border-color: #bbf7d0; }
-        .box-loser { background: #fff1f2; border-color: #fecdd3; }
-        
-        .product-card { border: 1px solid #eee; padding: 2rem; border-radius: 16px; margin: 2rem 0; background: #fafafa; }
-        
-        /* Scannability */
-        p { margin-bottom: 1.5rem; }
-        strong { color: var(--amazon-navy); }
-        ul { padding-left: 1.5rem; margin-bottom: 2rem; }
-        li { margin-bottom: 0.5rem; }
-
-        footer { background: var(--amazon-navy); color: white; padding: 4rem 5%; text-align: center; margin-top: 5rem; }
-        
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
-            .atf-hero { flex-direction: column; padding: 1.5rem; }
-            .contrast-grid { grid-template-columns: 1fr; }
+            .product-card-v2 { flex-direction: column; padding: 1.5rem; gap: 1.5rem; }
+            .product-image { width: 100%; height: 250px; }
             .sticky-cta { bottom: 1rem; right: 1rem; left: 1rem; }
-            .sticky-cta .cta-button { width: 100%; border-radius: 99px; }
+            .sticky-cta .cta-button { margin-top:0; width: 100%; border-radius: 99px; }
         }
     </style>
 </head>
@@ -148,7 +167,7 @@
                 </ul>
                 <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio actual en Amazon ahora &rarr;</a>
             </div>
-            <div class="atf-visual" style="flex-shrink:0; width:180px; height:180px; background:#eee; border-radius:12px; background-image: url('https://source.unsplash.com/featured/300x300?deshumidificadores'); background-size:cover;"></div>
+            <div class="atf-visual" style="flex-shrink:0; width:180px; height:180px; background:#eee; border-radius:12px; background-image: url('https://m.media-amazon.com/images/I/71X8k4jO9vL._AC_SL1500_.jpg'); background-size:cover; background-position:center;"></div>
         </div>
         
 
@@ -158,41 +177,69 @@
             <p style="margin:0;">👉 <strong>Veredicto Directo:</strong> Si tu prioridad es Deshumidificador para Habitación Pequeña, no pierdas tiempo con modelos de segunda fila. El <strong>De'Longhi Tasciugo AriaDry</strong> es el estándar de oro actual por fiabilidad y potencia.</p>
         </div>
         
+        <div class="product-card-v2 recommended">
+            <div class="recommendation-label">Nuestra Recomendación</div>
+            <div class="product-image">
+                <img src="https://m.media-amazon.com/images/I/71X8k4jO9vL._AC_SL1500_.jpg" alt="De'Longhi Tasciugo AriaDry" loading="lazy">
+            </div>
+            <div class="product-info">
+                <h3>De'Longhi Tasciugo AriaDry</h3>
+                <ul class="advantage-list">
+                    <li>Capacidad de extracción profesional</li><li>Filtro anti-polvo lavable</li><li>Muy silencioso para su potencia</li>
+                </ul>
+                <div class="limitation">
+                    <span>⚠️</span> Inversión inicial alta comparada con modelos básicos.
+                </div>
+                <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio en Amazon</a>
+            </div>
+        </div>
+        
         <h2>Simulación de Uso Real: ¿Qué pasará en tu casa?</h2>
         <p><strong>En el uso diario:</strong> Al principio te sorprenderá lo reactivo que es el sensor. Si cocinas o abres la ventana, el <strong>De'Longhi Tasciugo AriaDry</strong> detectará el cambio en segundos, algo que los modelos baratos simplemente ignoran.</p>
         <p><strong>Por la noche:</strong> Hemos verificado que en modo sueño, el ruido es prácticamente imperceptible. Es la diferencia entre un descanso reparador y despertarse con la sensación de tener un motor en la habitación.</p>
+        <h3>La alternativa económica inteligente</h3>
+        <div class="product-card-v2 ">
+            
+            <div class="product-image">
+                <img src="https://m.media-amazon.com/images/I/61Uv5Y-8ZLL._AC_SL1500_.jpg" alt="Pro Breeze 12L" loading="lazy">
+            </div>
+            <div class="product-info">
+                <h3>Pro Breeze 12L</h3>
+                <ul class="advantage-list">
+                    <li>Sensor de humedad automático</li><li>Modo de secado de ropa eficiente</li><li>Portátil con ruedas integradas</li>
+                </ul>
+                <div class="limitation">
+                    <span>⚠️</span> Depósito de agua algo pequeño (2L).
+                </div>
+                <a href="https://www.amazon.es/dp/B01G7SGNW8?tag=pires940f-21" class="cta-button">Ver precio en Amazon</a>
+            </div>
+        </div>
         
         <div style="background:#fff1f2; padding:1.5rem; border-radius:12px; margin:2rem 0; border:1px solid #fecdd3;">
             <h4 style="color:#991b1b; margin:0 0 0.5rem 0;">⚠️ El peligro de los sensores mediocres</h4>
-            <p style="margin:0; font-size:0.9rem;">El 40% de los dispositivos de gama baja fallan al medir PM2.5 (partículas finas). Marcan 'aire limpio' mientras tus pulmones siguen filtrando polvo fino. Solo un sensor láser calibrado como el del <strong>De'Longhi Tasciugo AriaDry</strong> te da seguridad real.</p>
-        </div>
-        
-        <h2>Comparativa de Decisión Rápida</h2>
-        <div class="contrast-grid">
-            <div class="contrast-box box-winner">
-                <h4 style="color:#166534; margin:0 0 1rem 0;">🏆 GANADOR TOTAL</h4>
-                <strong>De'Longhi Tasciugo AriaDry</strong>
-                <p style="font-size:0.9rem; margin:0.5rem 0 1rem 0;">No arriesgues tu dinero. Este modelo ofrece la filtración real que necesitas.</p>
-                <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" style="color:#166534; font-weight:700;">Ver disponibilidad &rarr;</a>
-            </div>
-            <div class="contrast-box" style="background:#fefce8; border-color:#fef08a;">
-                <h4 style="color:#854d0e; margin:0 0 1rem 0;">⚖️ EQUILIBRIO PRECIO</h4>
-                <strong>Pro Breeze 12L</strong>
-                <p style="font-size:0.9rem; margin:0.5rem 0 1rem 0;">Si el presupuesto aprieta, este es el único compromiso aceptable.</p>
-                <a href="https://www.amazon.es/dp/B01G7SGNW8?tag=pires940f-21" style="color:#854d0e; font-weight:700;">Ver oferta &rarr;</a>
-            </div>
-        </div>
-        <div class="contrast-box box-loser" style="margin-top:1.5rem;">
-            <h4 style="color:#991b1b; margin:0 0 0.5rem 0;">❌ EVITAR A TODA COSTA</h4>
-            <p style="margin:0; font-size:0.9rem;">Modelos tipo <strong>Mini Deshumidificador Peltier 500ml</strong>. Son baratos al principio, pero su motor falla a los 3 meses y su capacidad de filtrado es nula. Muchos usuarios cometen el error de comprarlos y terminan gastando el doble al tener que reemplazarlos.</p>
+            <p style="margin:0; font-size:0.9rem;">El 40% de los dispositivos de gama baja fallan al medir PM2.5. Marcan 'aire limpio' mientras tus pulmones siguen filtrando polvo fino. Solo un sensor láser calibrado te da seguridad real.</p>
         </div>
         
         <h2>Veredicto: Tu decisión final</h2>
         <p><strong>Compra el De'Longhi Tasciugo AriaDry si:</strong> Buscas tranquilidad, una filtración médica real y un aparato que te dure años.</p>
-        <p><strong>Evita los modelos genéricos si:</strong> No quieres tirar el dinero y tener que comprar otro aparato dentro de tres meses cuando el motor empiece a chirriar.</p>
-        <div style="text-align:center; margin-top:3rem;">
-            <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver opiniones reales y disponibilidad en Amazon</a>
+        
+        <div class="product-card-v2 recommended">
+            <div class="recommendation-label">Nuestra Recomendación</div>
+            <div class="product-image">
+                <img src="https://m.media-amazon.com/images/I/71X8k4jO9vL._AC_SL1500_.jpg" alt="De'Longhi Tasciugo AriaDry" loading="lazy">
+            </div>
+            <div class="product-info">
+                <h3>De'Longhi Tasciugo AriaDry</h3>
+                <ul class="advantage-list">
+                    <li>Capacidad de extracción profesional</li><li>Filtro anti-polvo lavable</li><li>Muy silencioso para su potencia</li>
+                </ul>
+                <div class="limitation">
+                    <span>⚠️</span> Inversión inicial alta comparada con modelos básicos.
+                </div>
+                <a href="https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21" class="cta-button">Ver precio en Amazon</a>
+            </div>
         </div>
+        
         
                 </div>
 
