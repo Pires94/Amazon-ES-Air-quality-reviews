@@ -5,7 +5,7 @@
     "h1": "Purificador de Aire para Habitación Pequeña",
     "cluster": "purificadores",
     "date": "2026-04-21",
-    "description": "Análisis experto sobre Purificador de Aire para Habitación Pequeña. Ayudamos a decidir qué modelo comprar en Amazon.es."
+    "description": "Análisis experto y guía de compra para Purificador de Aire para Habitación Pequeña. No compres sin leer esto."
   },
   {
     "slug": "purificador-aire-100-euros",
@@ -13,7 +13,7 @@
     "h1": "Purificador de Aire por menos de 100 Euros",
     "cluster": "purificadores",
     "date": "2026-04-21",
-    "description": "Análisis experto sobre Purificador de Aire por menos de 100 Euros. Ayudamos a decidir qué modelo comprar en Amazon.es."
+    "description": "Análisis experto y guía de compra para Purificador de Aire por menos de 100 Euros. No compres sin leer esto."
   },
   {
     "slug": "purificador-aire-alergias",
@@ -21,7 +21,7 @@
     "h1": "Purificador de Aire para Alergias",
     "cluster": "purificadores",
     "date": "2026-04-21",
-    "description": "Análisis experto sobre Purificador de Aire para Alergias. Ayudamos a decidir qué modelo comprar en Amazon.es."
+    "description": "Análisis experto y guía de compra para Purificador de Aire para Alergias. No compres sin leer esto."
   },
   {
     "slug": "purificador-aire-silencioso-noite",
@@ -29,39 +29,7 @@
     "h1": "Purificador de Aire Silencioso para la Noche",
     "cluster": "purificadores",
     "date": "2026-04-21",
-    "description": "Análisis experto sobre Purificador de Aire Silencioso para la Noche. Ayudamos a decidir qué modelo comprar en Amazon.es."
-  },
-  {
-    "slug": "deshumidificador-casa-humeda",
-    "title": "Deshumidificador para Casa Húmeda",
-    "h1": "Deshumidificador para Casa Húmeda",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto sobre Deshumidificador para Casa Húmeda. Ayudamos a decidir qué modelo comprar en Amazon.es."
-  },
-  {
-    "slug": "deshumidificador-habitacion-pequena",
-    "title": "Deshumidificador para Habitación Pequeña",
-    "h1": "Deshumidificador para Habitación Pequeña",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto sobre Deshumidificador para Habitación Pequeña. Ayudamos a decidir qué modelo comprar en Amazon.es."
-  },
-  {
-    "slug": "deshumidificador-150-euros",
-    "title": "Deshumidificador por menos de 150 Euros",
-    "h1": "Deshumidificador por menos de 150 Euros",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto sobre Deshumidificador por menos de 150 Euros. Ayudamos a decidir qué modelo comprar en Amazon.es."
-  },
-  {
-    "slug": "deshumidificador-consumo-energia",
-    "title": "Deshumidificador de Bajo Consumo",
-    "h1": "Deshumidificador de Bajo Consumo",
-    "cluster": "deshumidificadores",
-    "date": "2026-04-21",
-    "description": "Análisis experto sobre Deshumidificador de Bajo Consumo. Ayudamos a decidir qué modelo comprar en Amazon.es."
+    "description": "Análisis experto y guía de compra para Purificador de Aire Silencioso para la Noche. No compres sin leer esto."
   },
   {
     "slug": "purificador-aire-coche",
@@ -69,7 +37,39 @@
     "h1": "Mejor Purificador de Aire para el Coche",
     "cluster": "purificadores",
     "date": "2026-04-21",
-    "description": "Análisis experto sobre Mejor Purificador de Aire para el Coche. Ayudamos a decidir qué modelo comprar en Amazon.es."
+    "description": "Análisis experto y guía de compra para Mejor Purificador de Aire para el Coche. No compres sin leer esto."
+  },
+  {
+    "slug": "deshumidificador-casa-humeda",
+    "title": "Deshumidificador para Casa Húmeda",
+    "h1": "Deshumidificador para Casa Húmeda",
+    "cluster": "deshumidificadores",
+    "date": "2026-04-21",
+    "description": "Análisis experto y guía de compra para Deshumidificador para Casa Húmeda. No compres sin leer esto."
+  },
+  {
+    "slug": "deshumidificador-habitacion-pequena",
+    "title": "Deshumidificador para Habitación Pequeña",
+    "h1": "Deshumidificador para Habitación Pequeña",
+    "cluster": "deshumidificadores",
+    "date": "2026-04-21",
+    "description": "Análisis experto y guía de compra para Deshumidificador para Habitación Pequeña. No compres sin leer esto."
+  },
+  {
+    "slug": "deshumidificador-150-euros",
+    "title": "Deshumidificador por menos de 150 Euros",
+    "h1": "Deshumidificador por menos de 150 Euros",
+    "cluster": "deshumidificadores",
+    "date": "2026-04-21",
+    "description": "Análisis experto y guía de compra para Deshumidificador por menos de 150 Euros. No compres sin leer esto."
+  },
+  {
+    "slug": "deshumidificador-consumo-energia",
+    "title": "Deshumidificador de Bajo Consumo",
+    "h1": "Deshumidificador de Bajo Consumo",
+    "cluster": "deshumidificadores",
+    "date": "2026-04-21",
+    "description": "Análisis experto y guía de compra para Deshumidificador de Bajo Consumo. No compres sin leer esto."
   },
   {
     "slug": "deshumidificador-bano-pequeno",
@@ -77,6 +77,6 @@
     "h1": "Deshumidificador para Baño Pequeño",
     "cluster": "deshumidificadores",
     "date": "2026-04-21",
-    "description": "Análisis experto sobre Deshumidificador para Baño Pequeño. Ayudamos a decidir qué modelo comprar en Amazon.es."
+    "description": "Análisis experto y guía de compra para Deshumidificador para Baño Pequeño. No compres sin leer esto."
   }
 ]

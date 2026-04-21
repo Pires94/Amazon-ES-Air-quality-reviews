@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - Melhor Ar Casa</title>
+    <title>{{ title }} - Expertos Aire</title>
     <meta name="description" content="{{ description }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
         :root {
             --amazon-navy: #232f3e;
             --amazon-orange: #FF9900;
+            --amazon-orange-hover: #e68a00;
             --bg-gray: #f7fafa;
             --text-main: #111827;
             --text-muted: #4b5563;
@@ -23,7 +24,7 @@
             color: var(--text-main);
             margin: 0;
             padding: 0;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         header {
             background: white;
@@ -38,107 +39,142 @@
         }
         .logo { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--amazon-navy); text-decoration: none; }
         .logo span { color: var(--amazon-orange); }
-        .nav-link { text-decoration: none; color: var(--text-muted); font-weight: 600; margin-left: 2rem; font-size: 0.9rem; }
-        .nav-link:hover { color: var(--amazon-orange); }
-
-        main { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
-        .article-container { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
-        .featured-image { width: 100%; height: 400px; background-color: #e5e7eb; background-size: cover; background-position: center; }
         
-        .article-body { padding: 3rem 10%; }
-        .category-tag {
-            display: inline-block;
-            background: #eef2ff;
-            color: #4f46e5;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 700;
+        main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+        .article-container { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        
+        /* Above the Fold Hero Box */
+        .atf-hero {
+            background: linear-gradient(135deg, #fffcf5 0%, #fff7ed 100%);
+            border: 2px solid #fed7aa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .atf-badge {
+            background: var(--amazon-orange);
+            color: white;
+            font-weight: 800;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
             text-transform: uppercase;
+            display: inline-block;
             margin-bottom: 1rem;
         }
-        h1 { font-family: 'Outfit', sans-serif; font-size: 3rem; margin: 0 0 1.5rem 0; color: var(--amazon-navy); line-height: 1.1; }
-        .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
-
-        h2 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-top: 3rem; color: var(--amazon-navy); }
-        .product-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; border: 1px solid #eee; border-radius: 8px; overflow: hidden; }
-        .product-table th { background: #f9fafb; padding: 1rem; text-align: left; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); }
-        .product-table td { padding: 1.25rem 1rem; border-top: 1px solid #eee; }
+        .atf-content h3 { margin: 0 0 0.5rem 0; font-family: 'Outfit'; font-size: 1.5rem; }
         
+        .article-body { padding: 3rem 8%; }
+        h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; margin: 0 0 1rem 0; color: var(--amazon-navy); line-height: 1.2; }
+        .problem-statement { font-size: 1.2rem; color: var(--text-muted); font-weight: 500; border-left: 4px solid var(--amazon-orange); padding-left: 1.5rem; margin-bottom: 2rem; }
+        
+        h2 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-top: 3rem; color: var(--amazon-navy); border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+        
+        /* Conversion Buttons */
         .cta-button {
             background: var(--amazon-orange);
             color: #111;
-            padding: 0.8rem 1.5rem;
-            border-radius: 9999px;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-weight: 800;
+            font-size: 1.1rem;
             display: inline-block;
             transition: all 0.2s;
             text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #cc7a00;
         }
-        .cta-button:hover { background: #e68a00; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3); }
+        .cta-button:hover { background: var(--amazon-orange-hover); transform: translateY(-2px); box-shadow: 0 6px 0 #cc7a00; }
+        .cta-button:active { transform: translateY(2px); box-shadow: 0 0 0 #cc7a00; }
 
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
-        .p-block { padding: 1.5rem; border-radius: 12px; }
-        .pros { background: #f0fdf4; color: #166534; }
-        .cons { background: #fef2f2; color: #991b1b; }
-        .p-block h4 { margin: 0 0 0.5rem 0; text-transform: uppercase; font-size: 0.8rem; }
-        .p-block ul { padding-left: 1.2rem; margin: 0; }
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 2000;
+            display: none; /* Shown via JS */
+        }
 
-        .sidebar-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px dashed #ddd; }
-        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-        .related-card { background: #f9fafb; padding: 1rem; border-radius: 12px; text-decoration: none; color: inherit; transition: background 0.2s; }
-        .related-card:hover { background: #f3f4f6; }
-        .related-card h4 { margin: 0; font-size: 1rem; color: var(--amazon-navy); }
+        /* Contrast Engine Blocks */
+        .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .contrast-box { padding: 1.5rem; border-radius: 12px; border: 1px solid #eee; }
+        .box-winner { background: #f0fdf4; border-color: #bbf7d0; }
+        .box-loser { background: #fff1f2; border-color: #fecdd3; }
+        
+        .product-card { border: 1px solid #eee; padding: 2rem; border-radius: 16px; margin: 2rem 0; background: #fafafa; }
+        
+        /* Scannability */
+        p { margin-bottom: 1.5rem; }
+        strong { color: var(--amazon-navy); }
+        ul { padding-left: 1.5rem; margin-bottom: 2rem; }
+        li { margin-bottom: 0.5rem; }
 
         footer { background: var(--amazon-navy); color: white; padding: 4rem 5%; text-align: center; margin-top: 5rem; }
+        
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .article-body { padding: 2rem 5%; }
-            .pros-cons { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            .atf-hero { flex-direction: column; padding: 1.5rem; }
+            .contrast-grid { grid-template-columns: 1fr; }
+            .sticky-cta { bottom: 1rem; right: 1rem; left: 1rem; }
+            .sticky-cta .cta-button { width: 100%; border-radius: 99px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="../index.html" class="logo">Melhor<span>Ar</span>Casa</a>
-        <nav>
-            <a href="../index.html" class="nav-link">Inicio</a>
-            <a href="../#purificadores" class="nav-link">Purificadores</a>
-            <a href="../#deshumidificadores" class="nav-link">Deshumidificadores</a>
-        </nav>
+        <a href="../index.html" class="logo">Expertos<span>Aire</span></a>
     </header>
 
     <main>
         <article class="article-container">
-            <div class="featured-image" style="background-image: url('../assets/hero.jpg');"></div>
             <div class="article-body">
-                <span class="category-tag">{{ cluster_name }}</span>
                 <h1>{{ h1 }}</h1>
-                <div class="meta">Actualizado: {{ date }} • 6 min de lectura</div>
                 
+                {{ atf_box }}
+
                 <div class="content">
                     {{ content }}
                 </div>
 
-                <section class="sidebar-section">
-                    <h3>Más sobre {{ cluster_name }}</h3>
-                    <div class="related-grid">
+                <div class="sidebar-section" style="margin-top: 5rem; padding-top: 3rem; border-top: 2px solid #eee;">
+                    <h3>Siguiente paso en tu decisión</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
                         {% for link in related_links %}
-                        <a href="{{ link.url }}" class="related-card">
-                            <h4>{{ link.text }}</h4>
+                        <a href="{{ link.url }}" style="text-decoration:none; color:inherit; background:#f9fafb; padding:1.5rem; border-radius:12px; border:1px solid #eee;">
+                            <h4 style="margin:0; font-size:1rem;">{{ link.text }} &rarr;</h4>
                         </a>
                         {% endfor %}
                     </div>
-                </section>
+                </div>
             </div>
         </article>
     </main>
 
+    <div class="sticky-cta" id="stickyCta">
+        <a href="{{ best_link }}" class="cta-button">Ver precio en Amazon ahora</a>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Melhor Ar Casa. Todos los derechos reservados.</p>
-        <p style="font-size: 0.8rem; opacity: 0.7;">Como afiliados de Amazon, recibimos una comisión por las compras calificadas realizadas a través de nuestros enlaces.</p>
+        <p>&copy; 2024 Expertos Aire. Todos los derechos reservados.</p>
+        <p style="font-size: 0.8rem; opacity: 0.6; padding: 0 10%;">Como afiliados de Amazon, percibimos ingresos por compras cualificadas. El precio para ti no cambia, pero nos ayudas a mantener estos análisis independientes y rigurosos.</p>
     </footer>
+
+    <script>
+        window.onscroll = function() {
+            var scrollPos = window.scrollY;
+            var sticky = document.getElementById("stickyCta");
+            if (scrollPos > 600) {
+                sticky.style.display = "block";
+            } else {
+                sticky.style.display = "none";
+            }
+        };
+    </script>
 </body>
 </html>
