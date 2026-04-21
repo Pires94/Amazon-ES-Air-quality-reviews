@@ -16,7 +16,7 @@ AFFILIATE_TAG = "pires940f-21"
 
 class Generator:
     def __init__(self):
-        self.metadata = [] # We reset everything as per request
+        self.metadata = self.load_json(METADATA_FILE, [])
         self.article_template = self.load_file(TEMPLATES_DIR / "article.html")
         self.knowledge_pool = {
             "insights": [
@@ -61,6 +61,12 @@ class Generator:
                 ]
             }
         }
+
+    def load_json(self, path, default):
+        if path.exists():
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        return default
 
     def load_file(self, path):
         with open(path, 'r', encoding='utf-8') as f: return f.read()
@@ -140,13 +146,13 @@ class Generator:
         return f"<h2>Veredicto Final: ¿Qué comprar?</h2><p>{concl.get(intent)} Mi recomendación final es verificar las opiniones reales de usuarios que llevan más de 3 meses con el producto para confirmar su durabilidad.</p>"
 
     def run(self):
-        # 1. DELETE PREVIOUS POSTS
-        if ARTICLES_DIR.exists(): shutil.rmtree(ARTICLES_DIR)
         ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
-        if METADATA_FILE.exists(): os.remove(METADATA_FILE)
+        existing_slugs = [m["slug"] for m in self.metadata]
         
         for silo_key, silo_data in self.silos.items():
             for article in silo_data["data"]:
+                if article["slug"] in existing_slugs: continue
+                
                 intent = self.detect_intent(article["title"])
                 content_blocks = [
                     self.generate_intro(article["title"], intent),
