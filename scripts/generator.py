@@ -19,70 +19,48 @@ class Generator:
         self.keywords = self.load_json(KEYWORDS_FILE, {})
         self.article_template = self.load_file(TEMPLATES_DIR / "article.html")
         
-        # Curated pools of verified high-quality Unsplash IDs
+        # Expert Insights Pool
+        self.insights = {
+            "air_quality": "Muchos modelos económicos fallan al detectar PM2.5 (partículas finas). Un sensor de precisión láser es clave para automatizar el filtrado de forma real y no solo por tiempo.",
+            "humidity": "Una humedad por encima del 60% no solo es incómoda; es el caldo de cultivo perfecto para el moho negro, que puede causar problemas respiratorios crónicos en niños.",
+            "sleep": "Cualquier dispositivo por encima de los 25dB en modo noche puede fragmentar el sueño profundo, aunque no te despiertes del todo. El ruido blanco estable es preferible al intermitente.",
+            "filters": "El marketing del 'Filtro HEPA' a veces oculta que no son filtros H13 grado médico. Solo un H13 garantiza retener el 99.97% de partículas de 0.3 micras."
+        }
+
         self.silos = {
             "purificadores": {
                 "name": "Purificadores de Aire",
                 "index": "#purificadores",
                 "fallback": "purificadores.jpg",
-                "image_ids": [
-                    "photo-1584622650111-993a426fbf0a", "photo-1599423300746-b62533397364", 
-                    "photo-1614035030394-b6e5b01e0737", "photo-1532003885409-ed84d334f6ee",
-                    "photo-1585202900225-6d3ac20a6962", "photo-1558231013-17631379f835"
-                ],
+                "image_ids": ["photo-1584622650111-993a426fbf0a", "photo-1599423300746-b62533397364", "photo-1614035030394-b6e5b01e0737", "photo-1532003885409-ed84d334f6ee"],
                 "articles": [
-                    {"slug": "purificador-aire-habitacion-pequena", "title": "Mejor Purificador de Aire para Habitación Pequeña", "h1": "¿Buscas el mejor purificador para una habitación pequeña?"},
-                    {"slug": "purificador-aire-100-euros", "title": "Purificadores de Aire por menos de 100 Euros", "h1": "Los Mejores Purificadores de Aire Económicos (Menos de 100€)"},
-                    {"slug": "purificador-aire-alergias", "title": "Purificadores de Aire para Alergias: Guía Definitiva", "h1": "Dile adiós a las alergias con estos purificadores"},
-                    {"slug": "purificador-aire-silencioso-noite", "title": "Purificadores de Aire Silenciosos para la Noche", "h1": "Duerme tranquilo: Los purificadores más silenciosos del mercado"}
+                    {"slug": "purificador-aire-habitacion-pequena", "title": "Mejor Purificador de Aire para Habitación Pequeña", "h1": "¿Buscas el mejor purificador para una habitación pequeña?", "angle": "efficiency"},
+                    {"slug": "purificador-aire-100-euros", "title": "Purificadores de Aire por menos de 100 Euros", "h1": "Los Mejores Purificadores de Aire Económicos (Menos de 100€)", "angle": "price"},
+                    {"slug": "purificador-aire-alergias", "title": "Purificadores de Aire para Alergias: Guía Definitiva", "h1": "Dile adiós a las alergias con estos purificadores", "angle": "health"},
+                    {"slug": "purificador-aire-silencioso-noite", "title": "Purificadores de Aire Silenciosos para la Noche", "h1": "Duerme tranquilo: Los purificadores más silenciosos del mercado", "angle": "stealth"}
+                ],
+                "recommended_products": [
+                    {"name": "Levoit Core 300S", "type": "HEPA H13", "strength": "CADR 240 m³/h", "price": "€€", "link": "https://www.amazon.es/dp/B087V7N59N?tag=pires940f-21"},
+                    {"name": "Xiaomi Smart Air Purifier 4", "type": "Smart Filter", "strength": "CADR 400 m³/h", "price": "€€€", "link": "https://www.amazon.es/dp/B09M92CDY4?tag=pires940f-21"},
+                    {"name": "Cecotec TotalPure 2500", "type": "Básico", "strength": "CADR 200 m³/h", "price": "€", "link": "https://www.amazon.es/dp/B08NX96D98?tag=pires940f-21"}
                 ]
             },
             "deshumidificadores": {
                 "name": "Deshumidificadores",
                 "index": "#deshumidificadores",
                 "fallback": "deshumidificadores.jpg",
-                "image_ids": [
-                    "photo-1582738411706-bfc8e691d1c2", "photo-1595191630225-03bcb07378ac",
-                    "photo-1560185127-6ed189bf02f4", "photo-1520004434532-668416a08753",
-                    "photo-1556911220-e15b29be8c8f", "photo-1512918728675-ed5a9ecdebfd"
-                ],
+                "image_ids": ["photo-1582738411706-bfc8e691d1c2", "photo-1595191630225-03bcb07378ac", "photo-1560185127-6ed189bf02f4"],
                 "articles": [
-                    {"slug": "deshumidificador-casa-humeda", "title": "Soluciones para una Casa Húmeda", "h1": "Cómo eliminar la humedad excesiva en tu hogar"},
-                    {"slug": "deshumidificador-habitacion-pequena", "title": "Deshumidificador para Habitación Pequeña", "h1": "El deshumidificador ideal para espacios compactos"},
-                    {"slug": "deshumidificador-150-euros", "title": "Mejores Deshumidificadores por 150 Euros", "h1": "Eficiencia y ahorro: Deshumidificadores por menos de 150€"},
-                    {"slug": "deshumidificador-consumo-energia", "title": "Deshumidificadores de Bajo Consumo", "h1": "Ahorra en tu factura de luz con estos deshumidificadores"},
-                    {"slug": "deshumidificador-portatil-opiniones", "title": "Opiniones sobre Deshumidificadores Portátiles", "h1": "Guía de compra: Deshumidificadores portátiles analizados"}
-                ]
-            },
-            "humidificadores": {
-                "name": "Humidificadores",
-                "index": "#humidificadores",
-                "fallback": "humidificadores.jpg",
-                "image_ids": [
-                    "photo-1511974035430-5de47d3b95da", "photo-1526947425960-945c6e7393fe",
-                    "photo-1510218830377-1e93b3846665", "photo-1490818387583-1baba5e638af",
-                    "photo-1563298723-dcfebaa392e3", "photo-1449247709967-d4461a6a6103"
+                    {"slug": "deshumidificador-casa-humeda", "title": "Soluciones para una Casa Húmeda", "h1": "Cómo eliminar la humedad excesiva en tu hogar", "angle": "efficiency"},
+                    {"slug": "deshumidificador-habitacion-pequena", "title": "Deshumidificador para Habitación Pequeña", "h1": "El deshumidificador ideal para espacios compactos", "angle": "efficiency"},
+                    {"slug": "deshumidificador-150-euros", "title": "Mejores Deshumidificadores por 150 Euros", "h1": "Eficiencia y ahorro: Deshumidificadores por menos de 150€", "angle": "price"},
+                    {"slug": "deshumidificador-consumo-energia", "title": "Deshumidificadores de Bajo Consumo", "h1": "Ahorra en tu factura de luz con estos deshumidificadores", "angle": "price"},
+                    {"slug": "deshumidificador-portatil-opiniones", "title": "Opiniones sobre Deshumidificadores Portátiles", "h1": "Guía de compra: Deshumidificadores portátiles analizados", "angle": "comparison"}
                 ],
-                "articles": [
-                    {"slug": "humidificador-habitacion-seca", "title": "Humidificador para Habitación Seca", "h1": "Combate el aire seco con estos humidificadores"},
-                    {"slug": "humidificador-bebes-seguro", "title": "Humidificadores Seguros para Bebés", "h1": "La seguridad de tu bebé es lo primero: Humidificadores recomendados"},
-                    {"slug": "humidificador-silencioso", "title": "El Humidificador más Silencioso de 2024", "h1": "Humidificadores ultrasónicos silenciosos para tu dormitorio"},
-                    {"slug": "humidificador-invierno-vale-la-pena", "title": "¿Vale la pena un humidificador en invierno?", "h1": "Humidificadores en invierno: Todo lo que necesitas saber"}
-                ]
-            },
-            "comparativas": {
-                "name": "Comparativas",
-                "index": "#comparativas",
-                "fallback": "comparativas.jpg",
-                "image_ids": [
-                    "photo-1460925895917-afdab827c52f", "photo-1451187580459-43490279c0fa",
-                    "photo-1421757295538-9c80958e7520", "photo-1519389950473-47ba0277781c",
-                    "photo-1504384308090-c894fdcc538d", "photo-1484417894907-623942c8ee29"
-                ],
-                "articles": [
-                    {"slug": "purificador-vs-deshumidificador", "title": "Purificador vs Deshumidificador: ¿Cuál necesitas?", "h1": "Diferencias clave: Purificador vs Deshumidificador"},
-                    {"slug": "humidificador-vs-deshumidificador", "title": "Humidificador vs Deshumidificador: Guía Comparativa", "h1": "Humidificador o Deshumidificador: Resolvemos tus dudas"},
-                    {"slug": "mejor-aparato-humedad-casa", "title": "Mejor Aparato para la Humedad en Casa", "h1": "Análisis definitivo: El mejor aparato para controlar la humedad"}
+                "recommended_products": [
+                    {"name": "De'Longhi Tasciugo AriaDry", "type": "Compresor", "strength": "20L / 24h", "price": "€€€", "link": "https://www.amazon.es/dp/B01B4XU6N6?tag=pires940f-21"},
+                    {"name": "Pro Breeze 12L", "type": "Compacto", "strength": "12L / 24h", "price": "€€", "link": "https://www.amazon.es/dp/B01G7SGNW8?tag=pires940f-21"},
+                    {"name": "Cecotec BigDry 2000", "type": "Peltier", "strength": "0.3L / 24h", "price": "€", "link": "https://www.amazon.es/dp/B07N7T4G1C?tag=pires940f-21"}
                 ]
             }
         }
@@ -112,61 +90,88 @@ class Generator:
         photo_id = ids[idx]
         return f"https://images.unsplash.com/{photo_id}?auto=format&fit=crop&q=80&w=800"
 
-    def generate_article_content(self, article, cluster_key):
-        tag = "pires940f-21"
-        content = f"""
-        <p>Encontrar el producto adecuado para mejorar la calidad del aire en tu hogar puede ser un desafío. Especialmente cuando buscas <strong>{article['title'].lower()}</strong> en España, donde las condiciones climáticas varían tanto de una región a otra.</p>
+    def generate_expert_content(self, article, silo_key):
+        angle = article.get("angle", "efficiency")
+        products = self.silos[silo_key].get("recommended_products", [])
         
-        <h2>Por qué es importante elegir bien</h2>
-        <p>La mala calidad del aire puede afectar seriamente a tu salud y bienestar. Ya sea que sufras de alergias, tengas una casa con demasiada humedad o el aire esté excesivamente seco en invierno, la elección correcta marcará la diferencia.</p>
-        
-        <table class="product-table">
-            <thead>
-                <tr>
-                    <th>Modelo Destacado</th>
-                    <th>Ventaja Principal</th>
-                    <th>Precio Est.</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Premium Air Pro H13</strong></td>
-                    <td>Filtrado Médico HEPA</td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                    <td><a href="https://www.amazon.es/?tag={tag}" class="cta-button">Ver en Amazon</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Compact Silent Mode</strong></td>
-                    <td>Ultra Silencioso</td>
-                    <td>⭐⭐⭐⭐</td>
-                    <td><a href="https://www.amazon.es/?tag={tag}" class="cta-button">Ver en Amazon</a></td>
-                </tr>
-            </tbody>
-        </table>
+        # 1. INTRODUCTION (Problem based)
+        intros = {
+            "price": f"<p>Si estás buscando <strong>{article['title'].lower()}</strong>, probablemente ya te has dado cuenta de que el mercado está inundado de opciones mediocres. Como analista, mi objetivo es ayudarte a filtrar el marketing y encontrar lo que realmente vale cada euro de tu presupuesto.</p>",
+            "health": f"<p>Cuando hablamos de <strong>{article['title'].lower()}</strong>, no solo hablamos de confort, hablamos de salud. Las partículas PM2.5 y los alérgenos no perdonan, y elegir el equipo equivocado puede ser una pérdida de tiempo y bienestar. Te voy a ayudar a decidir con datos técnicos.</p>",
+            "stealth": f"<p>¿De qué sirve mejorar el aire si el ruido no te deja dormir? En esta guía sobre <strong>{article['title'].lower()}</strong>, nos enfocamos en el equilibrio perfecto entre rendimiento y silencio absoluto. Vamos a separar los modelos que 'susurran' de los que 'rugen'.</p>",
+            "efficiency": f"<p>Optimizar el espacio es clave. Para <strong>{article['title'].lower()}</strong>, buscamos modelos que ocupen poco pero rindan mucho. No te dejes engañar por el tamaño compacto: la potencia real se mide en la capacidad de procesado del aire.</p>",
+            "comparison": f"<p>Navegar entre decenas de especificaciones es agotador. Para entender realmente <strong>{article['title'].lower()}</strong>, hemos comparado los modelos líderes cara a cara. Aquí no hay favoritos por marca, solo ganadores por rendimiento.</p>"
+        }
+        intro = intros.get(angle, intros["efficiency"])
 
-        <h2>Análisis en Profundidad</h2>
-        <div class="pros-cons">
-            <div class="p-block pros">
-                <h4>Lo que nos gusta</h4>
-                <ul>
-                    <li>Excelente relación calidad-precio</li>
-                    <li>Consumo energético muy bajo</li>
-                    <li>Soporte técnico directo de Amazon.es</li>
-                </ul>
-            </div>
-            <div class="p-block cons">
-                <h4>A mejorar</h4>
-                <ul>
-                    <li>Filtros algo costosos</li>
-                    <li>Cable algo corto (1.5m)</li>
-                </ul>
-            </div>
+        # 2. QUICK RECOMMENDATION
+        best_product = products[0] if products else {"name": "Modelo Premium", "link": "#"}
+        rec_block = f"""
+        <div class="expert-box" style="background:#fff7ed; padding:1.5rem; border-radius:12px; border-left:5px solid #f97316; margin:2rem 0;">
+            <h4 style="margin:0 0 0.5rem 0; color:#c2410c;">📍 Recomendación Rápida de Experto</h4>
+            <p style="margin:0;">Si buscas la opción más equilibrada hoy: El <strong>{best_product['name']}</strong> es nuestra elección. Su relación entre capacidad y eficiencia energética lo sitúa por encima de la competencia en el mercado español.</p>
+            <a href="{best_product['link']}" style="display:inline-block; margin-top:0.8rem; font-weight:700; color:#c2410c;">Ver precio actual en Amazon &rarr;</a>
         </div>
-
-        <p>Al comprar un aparato para el aire, fíjate siempre en el CADR (Clean Air Delivery Rate), el nivel de ruido en decibelios y el coste de mantenimiento. No olvides revisar las opiniones en Amazon de otros usuarios.</p>
         """
-        return content
+
+        # 3. COMPARISON TABLE
+        rows = "".join([f"<tr><td><strong>{p['name']}</strong></td><td>{p['type']}</td><td>{p['strength']}</td><td>{p['price']}</td><td><a href='{p['link']}' class='cta-small'>Comprobar</a></td></tr>" for p in products])
+        table = f"""
+        <h2>Comparativa de Modelos Recomendados</h2>
+        <div style="overflow-x:auto;">
+            <table class="product-table">
+                <thead><tr><th>Modelo</th><th>Tecnología</th><th>Capacidad/Potencia</th><th>Rango Precio</th><th>Acción</th></tr></thead>
+                <tbody>{rows}</tbody>
+            </table>
+        </div>
+        """
+
+        # 4. PRODUCT ANALYSIS
+        analysis = "<h2>Análisis Detallado: ¿Cuál es para ti?</h2>"
+        for p in products:
+            analysis += f"""
+            <div class="product-card" style="margin-bottom:3rem;">
+                <h3>{p['name']} - La apuesta segura</h3>
+                <p>Este modelo destaca por su {p['type']}. Es ideal para usuarios que no quieren complicaciones técnicas y buscan un rendimiento estable desde el primer minuto.</p>
+                <div class="pros-cons">
+                    <div class="p-block pros"><h4>Por qué elegirlo</h4><ul><li>Alto rendimiento en {p['strength']}</li><li>Construcción robusta</li><li>Fácil mantenimiento</li></ul></div>
+                    <div class="p-block cons"><h4>Puntos débiles</h4><ul><li>Precio inicial superior a la media</li><li>Manual de usuario mejorable</li></ul></div>
+                </div>
+                <a href="{p['link']}" class="cta-button">Ver opiniones reales en Amazon</a>
+            </div>
+            """
+
+        # 5. BUYING GUIDE & 6. REAL-WORLD INSIGHT
+        insight_key = "air_quality" if silo_key == "purificadores" else "humidity"
+        insight = self.insights.get(insight_key, "")
+        guide = f"""
+        <h2>Guía de Compra: Lo que el marketing no te cuenta</h2>
+        <p>Al elegir tu equipo, olvida las etiquetas de colores. Lo que realmente importa es:</p>
+        <ul>
+            <li><strong>Capacidad Real:</strong> No midas por metros cuadrados, mide por volumen de aire/hora.</li>
+            <li><strong>Sensores:</strong> Si el aparato no tiene un sensor de partículas real, solo está trabajando a ciegas.</li>
+        </ul>
+        <div class="insight-strip" style="background:#f0f9ff; padding:1.5rem; border-radius:12px; margin:2rem 0;">
+            <h4 style="margin:0 0 0.5rem 0; color:#0369a1;">💡 Insight del Analista</h4>
+            <p style="margin:0;">{insight}</p>
+        </div>
+        """
+
+        # 7. FAQ
+        faq = f"""
+        <h2>Preguntas Frecuentes (FAQ)</h2>
+        <div class="faq-item"><strong>¿Cuánto consume realmente al mes?</strong><p>En España, con los precios actuales de la luz, un modelo de bajo consumo apenas suma 3-5 euros a tu factura mensual si lo usas de forma inteligente.</p></div>
+        <div class="faq-item"><strong>¿Cada cuánto debo limpiar los filtros?</strong><p>Para mantener el rendimiento, te recomendamos una revisión visual cada 15 días y un cambio profundo según las horas de uso (normalmente 6 meses).</p></div>
+        """
+
+        # 8. CONCLUSION
+        conclusion = f"""
+        <h2>Conclusión: Nuestra Decisión Final</h2>
+        <p>Si sufres de problemas respiratorios severos, no escatimes: ve por el <strong>{best_product['name']}</strong>. Sin embargo, para una habitación secundaria o uso ocasional, las opciones más económicas de nuestra tabla cumplirán con creces.</p>
+        <p><strong>¿Nuestra sugerencia?</strong> Comprueba ahora la disponibilidad, ya que el stock de estos modelos suele ser volátil durante las estaciones de alta demanda en Amazon.es.</p>
+        """
+
+        return intro + rec_block + table + analysis + guide + faq + conclusion
 
     def run(self):
         ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
@@ -177,18 +182,19 @@ class Generator:
                 article_meta = {
                     "slug": article['slug'], "title": article['title'], "h1": article['h1'],
                     "cluster": silo_key, "date": datetime.datetime.now().strftime("%Y-%m-%d"),
-                    "description": f"Guía experta sobre {article['title']}."
+                    "description": f"Análisis experto sobre {article['title']}. Ayudamos a decidir qué modelo comprar en Amazon.es."
                 }
 
-                content = self.generate_article_content(article, silo_key)
+                content = self.generate_expert_content(article, silo_key)
                 related = [ {"url": f"{a['slug']}.html", "text": a['title']} for a in silo_data['articles'] if a['slug'] != article['slug']]
                 
                 img_url = self.get_image_url(article['slug'], silo_key)
                 # CSS Layered Fallback: Unsplash -> Local Silo Fallback -> Hero
                 fallback_chain = f"url('{img_url}'), url('../assets/{silo_data['fallback']}'), url('../assets/hero.jpg')"
                 
-                html = self.article_template.replace("{{ title }}", article_meta['title']).replace("{{ h1 }}", article_meta['h1']).replace("{{ date }}", article_meta['date']).replace("{{ description }}", article_meta['description']).replace("{{ content }}", content).replace("{{ slug }}", article_meta['slug']).replace("{{ cluster_name }}", silo_data['name']).replace("{{ cluster_index }}", "index.html" + silo_data['index']).replace("url('../assets/hero.jpg')", fallback_chain)
+                html = self.article_template.replace("{{ title }}", article_meta['title']).replace("{{ h1 }}", article_meta['h1']).replace("{{ date }}", article_meta['date']).replace("{{ description }}", article_meta['description']).replace("{{ content }}", content).replace("{{ slug }}", article_meta['slug']).replace("{{ cluster_name }}", silo_data['name']).replace("{{ cluster_index }}", "../index.html#" + silo_key).replace("url('../assets/hero.jpg')", fallback_chain)
                 
+                # Contextual related links
                 links_html = "".join([f'<a href="{r["url"]}" class="related-card"><h4>{r["text"]}</h4></a>' for r in related[:3]])
                 if '{% for link in related_links %}' in html:
                     parts = html.split('{% for link in related_links %}')
@@ -207,9 +213,6 @@ class Generator:
     def generate_index(self):
         pur_cards = self.render_silo_section("purificadores", "🌬️ Recomendados: Purificadores")
         des_cards = self.render_silo_section("deshumidificadores", "💧 Soluciones de Humedad")
-        hum_cards = self.render_silo_section("humidificadores", "🌫️ Confort: Humidificadores")
-        com_cards = self.render_silo_section("comparativas", "⚖️ Comparativas")
-
         html = f"""<!DOCTYPE html>
 <html lang="es-ES">
 <head>
@@ -241,45 +244,30 @@ class Generator:
 <body>
     <header><a href="index.html" class="logo">Melhor<span style="color:var(--orange);">Ar</span>Casa</a></header>
     <section class="hero"><h1>Tu Casa, Aire Puro</h1><p>Análisis y comparativas de los mejores aparatos de aire.</p></section>
-    <main>
-        {pur_cards}
-        {des_cards}
-        {hum_cards}
-        {com_cards}
-    </main>
+    <main>{pur_cards}{des_cards}</main>
     <footer style="background:var(--navy); color:white; padding: 4rem 5%; text-align:center;"><p>© 2024 Melhor Ar Casa.</p></footer>
 </body>
 </html>"""
         self.write_file(SITE_DIR / "index.html", html)
 
     def render_silo_section(self, cluster_key, title):
-        articles = [a for a in self.metadata if a["cluster"] == cluster_key]
+        articles = [a for a in self.metadata if a.get("cluster") == cluster_key]
         if not articles: return ""
         cards = ""
         for a in articles:
             img_url = self.get_image_url(a['slug'], cluster_key)
-            # CSS Layered Fallback: Unsplash -> Local Silo Fallback -> Hero
             fallback_chain = f"url('{img_url}'), url('assets/{self.silos[cluster_key]['fallback']}'), url('assets/hero.jpg')"
-            cards += f"""
-            <a href="articles/{a['slug']}.html" class="card">
-                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), {fallback_chain}; background-size: cover; background-position: center;"></div>
-                <div class="card-body">
-                    <span class="card-tag">{self.silos[cluster_key]['name']}</span>
-                    <h3>{a['title']}</h3>
-                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
-                </div>
-                <div class="card-footer">Leer Artículo &rarr;</div>
-            </a>"""
+            cards += f"""<a href="articles/{a['slug']}.html" class="card"><div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), {fallback_chain}; background-size: cover; background-position: center;"></div><div class="card-body"><span class="card-tag">{self.silos[cluster_key]['name']}</span><h3>{a['title']}</h3><p>Análisis técnico y comparativa para ayudarte a elegir tu equipo ideal...</p></div><div class="card-footer">Ver Análisis &rarr;</div></a>"""
         return f'<h2 class="section-title" id="{cluster_key}">{title}</h2><div class="card-grid">{cards}</div>'
 
     def generate_sitemap(self):
-        xml = '<?xml version="1.0" encoding="UTF-8"?>\\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n'
-        xml += f'  <url><loc>{{BASE_URL}}</loc></url>\\n'
-        for a in self.metadata: xml += f'  <url><loc>{{BASE_URL}}articles/{{a["slug"]}}.html</loc></url>\\n'
+        xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        xml += f'  <url><loc>{BASE_URL}</loc></url>\n'
+        for a in self.metadata: xml += f'  <url><loc>{BASE_URL}articles/{a["slug"]}.html</loc></url>\n'
         self.write_file(SITE_DIR / "sitemap.xml", xml + '</urlset>')
 
     def generate_robots(self):
-        self.write_file(SITE_DIR / "robots.txt", f"User-agent: *\\nAllow: /\\nSitemap: {{BASE_URL}}sitemap.xml")
+        self.write_file(SITE_DIR / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}sitemap.xml")
 
 if __name__ == "__main__":
     Generator().run()
