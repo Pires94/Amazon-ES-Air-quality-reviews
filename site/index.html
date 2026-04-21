@@ -2,53 +2,190 @@
 <html lang="es-ES">
 <head>
     <meta charset="UTF-8">
-    <title>Melhor Ar Casa - Guía de Calidad de Aire y Amazon.es</title>
-    <meta name="description" content="Guía especializada en Purificadores, Deshumidificadores y Humidificadores. Encuentra el mejor equipo para tu hogar.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor Ar Casa - Blog de Calidad de Aire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f4f7f6; color: #333; }
-        header { background: #2563eb; color: white; padding: 40px; text-align: center; border-radius: 10px; margin-bottom: 30px; }
-        .cluster { background: white; padding: 25px; margin-bottom: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h2 { color: #2563eb; border-bottom: 2px solid #eef2f3; padding-bottom: 10px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 12px; }
-        a { text-decoration: none; color: #1e40af; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-        .silo-link { display: block; background: #eef2f3; padding: 10px; border-radius: 5px; }
+        :root { --navy: #232f3e; --orange: #FF9900; --bg: #f7fafa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin:0; color: #111827; }
+        header { background: white; padding: 1.5rem 5%; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .hero { background: linear-gradient(rgba(35, 47, 62, 0.7), rgba(35, 47, 62, 0.7)), url('assets/hero.jpg'); background-size: cover; background-position: center; padding: 8rem 5%; text-align: center; color: white; }
+        .hero h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; margin:0; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 1rem auto; }
+        
+        main { max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem; }
+        .section-title { font-family: 'Outfit', sans-serif; font-size: 2rem; margin-bottom: 2rem; border-bottom: 3px solid var(--orange); display: inline-block; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 5rem; }
+        .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .card-img { height: 200px; background: #e5e7eb; }
+        .card-body { padding: 1.5rem; flex-grow: 1; }
+        .card-tag { display: inline-block; background: #eef2ff; color: #4f46e5; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .card h3 { margin: 0.5rem 0; font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: var(--navy); line-height: 1.2; }
+        .card p { font-size: 0.9rem; color: #6b7280; margin: 0.5rem 0 1rem 0; }
+        .card-footer { padding: 1rem 1.5rem; border-top: 1px solid #f3f4f6; font-size: 0.8rem; font-weight: 600; color: var(--orange); text-transform: uppercase; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Melhor Ar Casa</h1>
-        <p>Tu guía experta para el mejor aire en el hogar (Amazon.es)</p>
+        <div style="font-family:'Outfit'; font-weight:700; font-size:1.5rem; color:var(--navy);">Melhor<span style="color:var(--orange);">Ar</span>Casa</div>
     </header>
+    <section class="hero">
+        <h1>Tu Casa, Aire Puro</h1>
+        <p>Análisis y comparativas de los mejores purificadores, humidificadores y deshumidificadores de Amazon.es.</p>
+    </section>
     <main>
-        <section class="cluster" id="purificadores">
-            <h2>🌬️ Purificadores de Aire</h2>
-            <ul>
-                <li><a href="articles/purificador-aire-habitacion-pequena.html">Mejor Purificador de Aire para Habitación Pequeña</a></li><li><a href="articles/purificador-aire-100-euros.html">Purificadores de Aire por menos de 100 Euros</a></li><li><a href="articles/purificador-aire-alergias.html">Purificadores de Aire para Alergias: Guía Definitiva</a></li><li><a href="articles/purificador-aire-silencioso-noite.html">Purificadores de Aire Silenciosos para la Noche</a></li>
-            </ul>
-        </section>
-        <section class="cluster" id="deshumidificadores">
-            <h2>💧 Deshumidificadores</h2>
-            <ul>
-                <li><a href="articles/deshumidificador-casa-humeda.html">Soluciones para una Casa Húmeda</a></li><li><a href="articles/deshumidificador-habitacion-pequena.html">Deshumidificador para Habitación Pequeña</a></li><li><a href="articles/deshumidificador-150-euros.html">Mejores Deshumidificadores por 150 Euros</a></li><li><a href="articles/deshumidificador-consumo-energia.html">Deshumidificadores de Bajo Consumo</a></li><li><a href="articles/deshumidificador-portatil-opiniones.html">Opiniones sobre Deshumidificadores Portátiles</a></li>
-            </ul>
-        </section>
-        <section class="cluster" id="humidificadores">
-            <h2>🌫️ Humidificadores</h2>
-            <ul>
-                <li><a href="articles/humidificador-habitacion-seca.html">Humidificador para Habitación Seca</a></li><li><a href="articles/humidificador-bebes-seguro.html">Humidificadores Seguros para Bebés</a></li><li><a href="articles/humidificador-silencioso.html">El Humidificador más Silencioso de 2024</a></li><li><a href="articles/humidificador-invierno-vale-la-pena.html">¿Vale la pena un humidificador en invierno?</a></li>
-            </ul>
-        </section>
-        <section class="cluster" id="comparativas">
-            <h2>⚖️ Comparativas</h2>
-            <ul>
-                <li><a href="articles/purificador-vs-deshumidificador.html">Purificador vs Deshumidificador: ¿Cuál necesitas?</a></li><li><a href="articles/humidificador-vs-deshumidificador.html">Humidificador vs Deshumidificador: Guía Comparativa</a></li><li><a href="articles/mejor-aparato-humedad-casa.html">Mejor Aparato para la Humedad en Casa</a></li>
-            </ul>
-        </section>
+        <h2 class="section-title" id="purificadores">🌬️ Recomendados: Purificadores</h2><div class="card-grid">
+            <a href="articles/purificador-aire-habitacion-pequena.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Purificadores de Aire</span>
+                    <h3>Mejor Purificador de Aire para Habitación Pequeña</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/purificador-aire-100-euros.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Purificadores de Aire</span>
+                    <h3>Purificadores de Aire por menos de 100 Euros</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/purificador-aire-alergias.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Purificadores de Aire</span>
+                    <h3>Purificadores de Aire para Alergias: Guía Definitiva</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/purificador-aire-silencioso-noite.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/purificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Purificadores de Aire</span>
+                    <h3>Purificadores de Aire Silenciosos para la Noche</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a></div>
+        <h2 class="section-title" id="deshumidificadores">💧 Soluciones de Humedad</h2><div class="card-grid">
+            <a href="articles/deshumidificador-casa-humeda.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Deshumidificadores</span>
+                    <h3>Soluciones para una Casa Húmeda</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/deshumidificador-habitacion-pequena.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Deshumidificadores</span>
+                    <h3>Deshumidificador para Habitación Pequeña</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/deshumidificador-150-euros.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Deshumidificadores</span>
+                    <h3>Mejores Deshumidificadores por 150 Euros</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/deshumidificador-consumo-energia.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Deshumidificadores</span>
+                    <h3>Deshumidificadores de Bajo Consumo</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/deshumidificador-portatil-opiniones.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/deshumidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Deshumidificadores</span>
+                    <h3>Opiniones sobre Deshumidificadores Portátiles</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a></div>
+        <h2 class="section-title" id="humidificadores">🌫️ Confort: Humidificadores</h2><div class="card-grid">
+            <a href="articles/humidificador-habitacion-seca.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Humidificadores</span>
+                    <h3>Humidificador para Habitación Seca</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/humidificador-bebes-seguro.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Humidificadores</span>
+                    <h3>Humidificadores Seguros para Bebés</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/humidificador-silencioso.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Humidificadores</span>
+                    <h3>El Humidificador más Silencioso de 2024</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/humidificador-invierno-vale-la-pena.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/humidificadores.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Humidificadores</span>
+                    <h3>¿Vale la pena un humidificador en invierno?</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a></div>
+        <h2 class="section-title" id="comparativas">⚖️ Comparativas</h2><div class="card-grid">
+            <a href="articles/purificador-vs-deshumidificador.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/comparativas.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Comparativas</span>
+                    <h3>Purificador vs Deshumidificador: ¿Cuál necesitas?</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/humidificador-vs-deshumidificador.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/comparativas.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Comparativas</span>
+                    <h3>Humidificador vs Deshumidificador: Guía Comparativa</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a>
+            <a href="articles/mejor-aparato-humedad-casa.html" class="card">
+                <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/comparativas.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="card-body">
+                    <span class="card-tag">Comparativas</span>
+                    <h3>Mejor Aparato para la Humedad en Casa</h3>
+                    <p>Guía completa y análisis detallado de los mejores modelos en Amazon.es...</p>
+                </div>
+                <div class="card-footer">Leer Artículo &rarr;</div>
+            </a></div>
     </main>
-    <footer style="text-align: center; margin-top: 50px; color: #777;">
-        <p>© 2024 Melhor Ar Casa. Participamos en el Programa de Afiliados de Amazon.es.</p>
+    <footer style="background:var(--navy); color:white; padding: 4rem 5%; text-align:center;">
+        <p>&copy; 2024 Melhor Ar Casa. La mejor guía de calidad de aire.</p>
     </footer>
 </body>
 </html>

@@ -1,3 +1,1 @@
-User-agent: *
-Allow: /
-Sitemap: https://pires94.github.io/Amazon-ES-Air-quality-reviews/sitemap.xml
+User-agent: *\nAllow: /\nSitemap: {BASE_URL}sitemap.xml
