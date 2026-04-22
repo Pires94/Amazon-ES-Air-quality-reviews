@@ -1,7 +1,6 @@
 import json
 import os
 import datetime
-import random
 from pathlib import Path
 
 # Configuration
@@ -12,74 +11,77 @@ TEMPLATES_DIR = Path("templates")
 METADATA_FILE = CONTENT_DIR / "metadata.json"
 AFFILIATE_TAG = "pires940f-21"
 
-class ProfitGenerator:
+class HighConversionGenerator:
     def __init__(self):
         self.metadata = self.load_json(METADATA_FILE, [])
         self.article_template = self.load_file(TEMPLATES_DIR / "article.html")
-        # Stable Curated Imagery
-        self.images = {
-            "purificadores": {
-                "health": "1585771724684-2626ef7a8963",
-                "noise": "1632928274371-878938e4d825",
-                "price": "1632733152643-41bbd011f06f"
-            },
-            "deshumidificadores": {
-                "power": "1591147055011-8cc5c478a06e",
-                "space": "1591864506306-031af4c9a626",
-                "extreme": "1621230182745-f0e2270c2941"
-            }
+        # Stable Curated Imagery Mapping
+        self.img_map = {
+            "purificadores": "1585771724684-2626ef7a8963",
+            "deshumidificadores": "1591147055011-8cc5c478a06e",
+            "alergias": "1585771724684-2626ef7a8963",
+            "silencioso": "1632928274371-878938e4d825",
+            "barato": "1632733152643-41bbd011f06f",
+            "bano": "1585642875141-8f5539498263",
+            "casa": "1621230182745-f0e2270c2941"
         }
         self.products = {
             "purificadores": [
                 {
                     "id": "best", "name": "Levoit Core 400S", "link": f"https://www.amazon.es/dp/B099K1S8XW?tag={AFFILIATE_TAG}",
                     "pros": ["Filtración HEPA H13 certificada", "Modo noche ultrasilencioso (24dB)", "App VeSync con control PM2.5 real"],
-                    "reason": "Es el único que realmente detecta y elimina partículas finas en segundos sin ruidos molestos.",
-                    "negative": "Los filtros de marca blanca no rinden igual, lo que obliga a comprar originales."
+                    "reason": "La única opción que garantiza aire puro en salones grandes sin ruido mecánico intrusivo.",
+                    "limit": "Los filtros oficiales son caros, pero necesarios para mantener la garantía.",
+                    "badge": "MEJOR OPCIÓN GENERAL"
                 },
                 {
                     "id": "budget", "name": "Xiaomi Smart Air Purifier 4 Lite", "link": f"https://www.amazon.es/dp/B09M938K69?tag={AFFILIATE_TAG}",
-                    "pros": ["Diseño compacto efectivo", "Consumo energético mínimo", "Ideal para oficinas"],
-                    "reason": "Funciona bien para espacios pequeños, pero el sensor no es de grado médico.",
-                    "negative": "En velocidad máxima el ruido es excesivo para dormir cerca de él."
+                    "pros": ["Diseño minimalista compacto", "Perfecto para habitaciones de hasta 25m2", "Bajo consumo eléctrico"],
+                    "reason": "Rendimiento sólido para presupuestos ajustados. Cumple su función sin adornos.",
+                    "limit": "Filtro más básico que la competencia de alta gama.",
+                    "badge": "OPCIÓN ECONÓMICA"
                 },
                 {
-                    "id": "avoid", "name": "Purificador 'Ionizador' Genérico", "link": "#",
-                    "pros": ["Precio ridículo", "Portátil USB"],
-                    "reason": "No tiene filtro HEPA real; solo mueve el aire sucio usando electricidad.",
-                    "negative": "Produce ozono residual que puede ser irritante para personas sensibles."
+                    "id": "avoid", "name": "Modelos 'Tipo HEPA' sin Filtro Real", "link": "#",
+                    "pros": ["Precio de ganga", "Pequeño y ligero"],
+                    "reason": "Aunque parecen baratos, su capacidad de filtrado es casi nula contra PM2.5.",
+                    "limit": "No recomendado para alérgicos o salud respiratoria.",
+                    "badge": "NO RECOMENDADO"
                 }
             ],
             "deshumidificadores": [
                 {
                     "id": "best", "name": "De'Longhi Tasciugo AriaDry", "link": f"https://www.amazon.es/dp/B01B4XU6N6?tag={AFFILIATE_TAG}",
-                    "pros": ["Capacidad de 20L verificada", "Filtro anti-polvo lavable", "Drenaje continuo para sótanos"],
-                    "reason": "La única solución definitiva para humedades estructurales y condensación severa.",
-                    "negative": "Pesa bastante y las ruedas no son las mejores en alfombras."
+                    "pros": ["20L de extracción real por día", "Drenaje continuo para sótanos", "Marca líder en fiabilidad"],
+                    "reason": "La solución definitiva si tienes problemas de condensación o humedad estructural.",
+                    "limit": "Inversión inicial alta, pero ahorra en reparaciones de pintura.",
+                    "badge": "ALTO RENDIMIENTO"
                 },
                 {
                     "id": "budget", "name": "Pro Breeze 12L", "link": f"https://www.amazon.es/dp/B01G7SGNW8?tag={AFFILIATE_TAG}",
-                    "pros": ["Automático por porcentaje", "Pantalla LED de humedad", "Muy ligero"],
-                    "reason": "Perfecto para baños o habitaciones con humedad leve por falta de ventilación.",
-                    "negative": "El depósito de 2 litros se llena en una tarde si hay mucha humedad."
+                    "pros": ["Ligero y fácil de mover", "Sensor de humedad digital", "Ideal para baños y lavanderías"],
+                    "reason": "Excelente equilibrio entre precio y capacidad de extracción diaria.",
+                    "limit": "Depósito de 2L que requiere vaciado frecuente en zonas muy húmedas.",
+                    "badge": "CALIDAD-PRECIO"
                 },
                 {
-                    "id": "avoid", "name": "Absorbedor de Humedad Químico", "link": "#",
-                    "pros": ["No gasta luz", "Sin ruido"],
-                    "reason": "Es incapaz de reducir la humedad ambiental; solo sirve para cajones cerrados.",
-                    "negative": "El líquido residual es tóxico y requiere recambios constantes que salen caros."
+                    "id": "avoid", "name": "Mini Absorbedores Peltier", "link": "#",
+                    "pros": ["Silencio total", "Bajo consumo"],
+                    "reason": "Su capacidad es tan baja que no sirve para habitaciones, solo para armarios muy pequeños.",
+                    "limit": "No sirve para problemas reales de humedad.",
+                    "badge": "EVITAR"
                 }
             ]
         }
         self.silos = {
             "purificadores": [
-                {"slug": "purificador-aire-alergias", "title": "Purificador de Aire para Alergias", "intent": "health"},
-                {"slug": "purificador-aire-silencioso-noite", "title": "Purificador de Aire Silencioso para Dormir", "intent": "noise"},
-                {"slug": "purificador-aire-habitacion-pequena", "title": "Purificador de Aire para Espacios Pequeños", "intent": "price"}
+                {"slug": "purificador-aire-alergias", "title": "Mejor Purificador de Aire para Alergias", "intent": "alergias", "desc": "Filtración HEPA H13 real para eliminar polen y polvo."},
+                {"slug": "purificador-aire-silencioso-noite", "title": "Purificador Silencioso para Dormir", "intent": "silencioso", "desc": "Descansa mejor con tecnología de bajo ruido certificado."},
+                {"slug": "purificador-aire-barato-2024", "title": "Purificadores Baratos que SÍ Funcionan", "intent": "barato", "desc": "Opciones económicas sin sacrificar la salud de tu aire."}
             ],
             "deshumidificadores": [
-                {"slug": "deshumidificador-casa-humeda", "title": "Eliminar Humedad en Casa Húmeda", "intent": "power"},
-                {"slug": "deshumidificador-bano-pequeno", "title": "Mejor Deshumidificador para Baño", "intent": "space"}
+                {"slug": "deshumidificador-casa-humeda", "title": "Soluciones para Humedad en Casa", "intent": "casa", "desc": "Elimina la condensación y el olor a humedad de raíz."},
+                {"slug": "deshumidificador-bano-pequeno", "title": "Mejor Deshumidificador para Baño", "intent": "bano", "desc": "Potencia compacta para evitar el moho en el cuarto de baño."}
             ]
         }
 
@@ -94,85 +96,85 @@ class ProfitGenerator:
     def write_file(self, path, content):
         with open(path, 'w', encoding='utf-8') as f: f.write(content)
 
-    def get_img(self, cat, intent):
-        photo_id = self.images[cat].get(intent, self.images[cat].get("health", "default"))
+    def get_img_url(self, intent):
+        photo_id = self.img_map.get(intent, "1585771724684-2626ef7a8963")
         return f"https://images.unsplash.com/photo-{photo_id}?auto=format&fit=crop&w=800&q=80"
 
-    def cta(self, intent):
-        opts = {
-            "price": "Ver precio actual en Amazon",
-            "urgency": "Comprobar disponibilidad ahora",
-            "trust": "Ver opiniones reales antes de comprar"
-        }
-        return f'<a href="#" class="cta-btn">{opts.get(intent, opts["urgency"])}</a>'
-
-    def gen_product_card(self, prod, status="best"):
-        cat = "purificadores" # simplified
-        img = self.get_img("purificadores", "health") # simplified
-        badge = '<div class="winner-badge">🔥 MEJOR OPCIÓN GENERAL</div>' if status == "best" else ""
-        cls = "winner" if status == "best" else ("loser" if status == "avoid" else "")
-        pros = "".join([f'<li class="pro">{p}</li>' for p in prod['pros']])
-        con = f'<li class="con">{prod["negative"]}</li>'
-        return f"""<div class="product-card {cls}">{badge}
-            <div class="card-layout">
-                <div class="card-img"><img src="{img}" alt="{prod['name']}"></div>
-                <div class="card-content">
-                    <h3>{prod['name']}</h3>
-                    <ul class="feature-list">{pros}{con}</ul>
-                    <p><strong>Por qué es clave:</strong> {prod['reason']}</p>
-                    <a href="{prod['link']}" class="cta-btn">{self.cta_text(status)}</a>
+    def gen_product_block(self, prod, category):
+        img_id = self.img_map.get(category, "1585771724684-2626ef7a8963")
+        img_url = f"https://images.unsplash.com/photo-{img_id}?auto=format&fit=crop&w=600&q=80"
+        pros = "".join([f'<li><span style="color:green; font-weight:bold;">✔</span> {p}</li>' for p in prod['pros']])
+        return f"""<div style="background:white; border:1px solid #e2e8f0; border-radius:12px; padding:2rem; margin:2rem 0; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1);">
+            <div style="display:grid; grid-template-columns: 240px 1fr; gap:2rem;">
+                <div style="overflow:hidden; border-radius:8px;"><img src="{img_url}" alt="{prod['name']}" style="width:100%; height:200px; object-fit:cover;"></div>
+                <div>
+                    <span style="background:#FF9900; color:white; padding:4px 10px; border-radius:4px; font-weight:800; font-size:0.75rem;">{prod['badge']}</span>
+                    <h3 style="margin:10px 0; font-size:1.5rem;">{prod['name']}</h3>
+                    <ul style="list-style:none; padding:0; margin:0 0 1rem 0; font-size:0.95rem;">{pros}</ul>
+                    <p style="font-size:0.9rem; color:#4a5568;"><strong>Limitación:</strong> {prod['limit']}</p>
+                    <a href="{prod['link']}" style="display:inline-block; background:#FF9900; color:white; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:bold; width:100%; text-align:center;">Ver precio en Amazon</a>
                 </div>
             </div></div>"""
-
-    def cta_text(self, status):
-        if status == "best": return "Comprobar disponibilidad ahora"
-        if status == "budget": return "Ver precio actual en Amazon"
-        return "Ver opiniones reales (decepción garantizada)"
 
     def run(self):
         ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
         for cat, articles in self.silos.items():
-            b = self.products[cat][0]; acc = self.products[cat][1]; rej = self.products[cat][2]
+            best = self.products[cat][0]; budget = self.products[cat][1]; avoid = self.products[cat][2]
             for a in articles:
-                img_hero = self.get_img(cat, a['intent'])
-                anchor = f"""<div class="atf-anchor"><div class="atf-text"><span class="atf-badge">RECOMENDACIÓN DIRECTA</span>
-                    <h3>Mejor opción: {b['name']}</h3><p>{b['reason']}</p>
-                    <a href="{b['link']}" class="cta-btn">Ver precio actual en Amazon</a></div>
-                    <div class="atf-visual"><img src="{img_hero}"></div></div>"""
+                img_hero = self.get_img_url(a['intent'])
+                atf_block = f"""<div style="background:#fffcf2; border:2px solid #FF9900; border-radius:12px; padding:2rem; margin:2rem 0; display:grid; grid-template-columns:1fr 300px; gap:2rem; align-items:center;">
+                    <div><span style="background:#FF9900; color:white; padding:4px 10px; border-radius:4px; font-weight:bold; font-size:0.8rem;">MEJOR OPCIÓN ANALIZADA</span>
+                    <h2 style="margin:1rem 0;">{best['name']}</h2><p>{best['reason']}</p>
+                    <a href="{best['link']}" style="display:inline-block; background:#FF9900; color:white; padding:15px 30px; border-radius:8px; text-decoration:none; font-weight:800; margin-top:1rem;">Asegurar disponibilidad en Amazon</a></div>
+                    <div><img src="{img_hero}" style="width:100%; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></div></div>"""
                 
-                content = f"""<p class="micro-decision">Si buscas {a['title'].lower()} → ya has encontrado la respuesta. No pierdas tiempo con modelos de bajo rendimiento que tendrás que reemplazar en 6 meses.</p>
-                    <h2>Simulación de Uso Real</h2>
-                    <p><strong>En el uso diario:</strong> La diferencia se nota en los primeros 15 minutos. Mientras los modelos baratos solo mueven el polvo, el <strong>{b['name']}</strong> purifica el flujo de aire de forma masiva. Después de varias horas, el sensor láser confirma la bajada real de PM2.5.</p>
-                    <p><strong>Por la noche:</strong> En modo sueño, el silencio es real. No hay vibraciones mecánicas ni pitidos molestos. Es la diferencia entre levantarse descansado o con dolor de cabeza por el zumbido constante.</p>
-                    {self.gen_product_card(b, "best")}
-                    <div class="micro-decision">Si tienes un presupuesto más ajustado → la siguiente opción es aceptable, pero tiene límites claros.</div>
-                    {self.gen_product_card(acc, "budget")}
-                    <h2>El peligro de elegir mal</h2>
-                    <p>Comprar un dispositivo sin certificación HEPA real o con un compresor ineficiente no es ahorrar; es tirar el dinero. Muchos usuarios caen en la trampa del diseño bonito y terminan con un aparato ruidoso que no resuelve el problema.</p>
-                    {self.gen_product_card(rej, "avoid")}
+                content = f"""<h2>Análisis de Decisión</h2><p>Elegir un {cat[:-2]} no debería ser una cuestión de suerte. Hemos analizado el rendimiento real, el ruido y la fiabilidad para que no tires tu dinero.</p>
+                    {self.gen_product_block(best, cat)}
+                    <div style="background:#f7fafc; padding:1.5rem; border-left:4px solid #cbd5e0; margin:2rem 0; font-style:italic;">Si tu presupuesto es más ajustado, la siguiente opción ofrece un rendimiento digno por debajo de los 100€.</div>
+                    {self.gen_product_block(budget, cat)}
+                    <h2 style="color:#e53e3e;">Por qué deberías evitar modelos ultra-baratos</h2>
+                    <p>Mucha gente comete el error de comprar dispositivos de 30-40 euros esperando milagros. La realidad es que estos aparatos suelen ser juguetes ruidosos sin capacidad real.</p>
+                    {self.gen_product_block(avoid, cat)}
                 """
                 
-                final = f"""<div class="final-push"><h3>Veredicto Final: Haz tu elección hoy</h3>
-                    <div class="push-item"><h4>Compra el {b['name']} si:</h4><p>Buscas la solución definitiva, potencia verificada y tranquilidad total para tu salud.</p></div>
-                    <div class="push-item"><h4>Elige el {acc['name']} si:</h4><p>Tienes menos presupuesto y el ruido no es tu prioridad principal.</p></div>
-                    <div class="push-item"><h4 style="color:#ef4444">Evita el {rej['name']} si:</h4><p>No quieres perder el tiempo con un aparato que no cumple lo que promete.</p></div>
-                    <a href="{b['link']}" class="cta-btn" style="box-shadow:none; background:#FFF; color:#111;">Ver opiniones reales de compradores en Amazon</a></div>"""
-                
                 html = self.article_template.replace("{{ title }}", a['title']).replace("{{ h1 }}", a['title'])
-                html = html.replace("{{ description }}", f"Guía decisiva para {a['title']}. Análisis honesto del rendimiento real.").replace("{{ anchor_block }}", anchor)
-                html = html.replace("{{ content }}", content).replace("{{ final_decision }}", final).replace("{{ best_link }}", b['link']).replace("{{ best_name }}", b['name'])
+                html = html.replace("{{ description }}", a['desc']).replace("{{ atf_box }}", atf_block).replace("{{ content }}", content)
+                html = html.replace("{{ best_link }}", best['link']).replace("{{ best_name }}", best['name'])
                 
                 self.write_file(ARTICLES_DIR / f"{a['slug']}.html", html)
                 if not any(m['slug'] == a['slug'] for m in self.metadata):
-                    self.metadata.append({"slug": a['slug'], "title": a['title'], "cluster": cat})
+                    self.metadata.append({"slug": a['slug'], "title": a['title'], "cluster": cat, "intent": a['intent'], "desc": a['desc']})
 
         with open(METADATA_FILE, 'w', encoding='utf-8') as f: json.dump(self.metadata, f, indent=2, ensure_ascii=False)
-        self.gen_index()
+        self.generate_index()
 
-    def gen_index(self):
-        html = f'<!DOCTYPE html><html lang="es-ES"><head><meta charset="UTF-8"><title>Expertos Aire</title><style>body{{font-family:sans-serif; background:#f8f9fa; margin:0; padding:2rem;}} .grid{{display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:2rem; max-width:1200px; margin:auto;}} .card{{background:white; padding:1.5rem; border-radius:12px; text-decoration:none; color:inherit; box-shadow:0 1px 3px rgba(0,0,0,0.1);}}</style></head><body><h1 style="text-align:center;">Guías de Decisión 2024</h1><div class="grid">'
-        for a in self.metadata: html += f'<a href="articles/{a["slug"]}.html" class="card"><h3>{a["title"]}</h3><p>Ver análisis y veredicto &rarr;</p></a>'
-        self.write_file(SITE_DIR / "index.html", html + '</div></body></html>')
+    def generate_index(self):
+        featured = self.metadata[0] if self.metadata else None
+        feat_img = self.get_img_url(featured['intent'] if featured else "alergias")
+        
+        cards_html = ""
+        for a in self.metadata[1:]:
+            img = self.get_img_url(a['intent'])
+            cards_html += f"""<a href="articles/{a['slug']}.html" style="background:white; border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); transition:transform 0.2s;">
+                <img src="{img}" style="width:100%; height:180px; object-fit:cover;">
+                <div style="padding:1.5rem;"><h3>{a['title']}</h3><p style="font-size:0.9rem; color:#4a5568;">{a['desc']}</p><span style="color:#FF9900; font-weight:bold;">Ver análisis &rarr;</span></div>
+            </a>"""
+
+        html = f"""<!DOCTYPE html><html lang="es-ES"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Expertos Aire - Guías de Compra</title>
+            <style>body{{font-family:sans-serif; background:#f7fafc; margin:0;}} .main{{max-width:1100px; margin:auto; padding:2rem;}} .hero{{background:#2d3748; color:white; padding:4rem 2rem; text-align:center;}} .grid{{display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:2rem; margin-top:3rem;}}</style></head>
+            <body><div class="hero"><h1>Mejores soluciones para mejorar el aire en casa</h1><p>Análisis expertos y decisiones directas para tu salud.</p></div>
+            <div class="main">
+                <div style="background:white; border-radius:16px; display:grid; grid-template-columns:1fr 1fr; overflow:hidden; box-shadow:0 20px 25px -5px rgba(0,0,0,0.1); margin-bottom:4rem;">
+                    <div style="padding:3rem;">
+                        <span style="background:#fed7d7; color:#c53030; padding:4px 12px; border-radius:20px; font-weight:bold; font-size:0.8rem;">🔥 MÁS RECOMENDADO</span>
+                        <h2 style="font-size:2rem; margin:1rem 0;">{featured['title']}</h2><p>{featured['desc']}</p>
+                        <a href="articles/{featured['slug']}.html" style="display:inline-block; background:#FF9900; color:white; padding:15px 40px; border-radius:8px; text-decoration:none; font-weight:800; font-size:1.1rem;">Ver análisis completo</a>
+                    </div>
+                    <div style="background:url('{feat_img}') center/cover;"></div>
+                </div>
+                <div class="grid">{cards_html}</div>
+            </div></body></html>"""
+        self.write_file(SITE_DIR / "index.html", html)
 
 if __name__ == "__main__":
-    ProfitGenerator().run()
+    HighConversionGenerator().run()

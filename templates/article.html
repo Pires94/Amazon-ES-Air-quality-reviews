@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - Guía Decisiva 2024</title>
+    <title>{{ title }} - Expertos Aire</title>
     <meta name="description" content="{{ description }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
         }
         header {
             background: white;
-            padding: 0.8rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,109 +41,29 @@
         .logo { font-family: 'Outfit'; font-weight: 800; font-size: 1.5rem; color: var(--amazon-navy); text-decoration: none; }
         .logo span { color: var(--amazon-orange); }
         
-        main { max-width: 900px; margin: 1.5rem auto; padding: 0 1.2rem; }
-        .article-card { background: white; border-radius: 12px; padding: 2.5rem 6%; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        main { max-width: 960px; margin: 2rem auto; padding: 0 1.5rem; }
+        .article-card { background: white; border-radius: 16px; padding: 3rem 8%; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
         
-        h1 { font-family: 'Outfit'; font-size: 2.5rem; line-height: 1.1; margin: 0 0 1.5rem 0; color: #000; letter-spacing: -0.02em; }
+        h1 { font-family: 'Outfit'; font-size: 2.8rem; line-height: 1.1; margin: 0 0 2rem 0; color: #000; letter-spacing: -0.02em; }
+        h2 { font-family: 'Outfit'; font-size: 1.8rem; margin: 3rem 0 1.5rem 0; border-bottom: 2px solid var(--bg-gray); padding-bottom: 0.5rem; }
         
-        /* ATF Decision Anchor */
-        .atf-anchor {
-            background: #fffcf5;
-            border: 2px solid var(--amazon-orange);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            display: grid;
-            grid-template-columns: 1fr 280px;
-            gap: 2rem;
-            align-items: center;
-        }
-        .atf-badge { background: var(--amazon-orange); color: #000; padding: 4px 10px; font-weight: 800; font-size: 0.75rem; border-radius: 4px; text-transform: uppercase; margin-bottom: 15px; display: inline-block; }
-        .atf-visual img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        
-        /* Product Cards V2 (Contrast Enforcement) */
-        .product-card {
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
-            margin: 3.5rem 0;
-            padding: 2rem;
-            background: #FFF;
-            position: relative;
-        }
-        .product-card.winner { border: 2px solid var(--amazon-orange); background: #fffcf5; }
-        .product-card.loser { border-color: #fee2e2; }
-        .winner-badge {
-            position: absolute; top: -15px; left: 24px;
-            background: var(--amazon-orange); color: #000;
-            padding: 4px 14px; font-weight: 800; font-size: 0.85rem;
-            border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .card-layout { display: flex; gap: 2rem; }
-        .card-img { width: 35%; flex-shrink: 0; }
-        .card-img img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; }
-        .card-content { flex-grow: 1; }
-        .card-content h3 { margin: 0 0 1rem 0; font-family: 'Outfit'; font-size: 1.6rem; color: var(--amazon-navy); }
-        
-        .feature-list { list-style: none; padding:0; margin: 0 0 1.5rem 0; }
-        .feature-list li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; }
-        .feature-list li.pro::before { content: "✓"; color: var(--accent-green); font-weight: 800; }
-        .feature-list li.con::before { content: "✖"; color: var(--accent-red); font-weight: 800; }
-        
-        /* Micro-Decision Blocks */
-        .micro-decision {
-            background: #f1f5f9;
-            border-left: 5px solid #64748b;
-            padding: 1.2rem 1.8rem;
-            margin: 2.5rem 0;
-            font-weight: 600;
-            font-size: 1.05rem;
-            border-radius: 4px;
-        }
+        /* The ATF Block is injected directly via generator and styled there */
+        /* The Product blocks are injected directly via generator and styled there */
 
-        /* Final Decision Block */
-        .final-push {
-            margin-top: 5rem;
-            padding: 3rem;
-            background: #111827;
+        .section-break { margin: 4rem 0; }
+        
+        .footer-cta {
+            background: #1a202c;
             color: white;
+            padding: 3rem;
             border-radius: 16px;
-        }
-        .push-item { margin-bottom: 2rem; padding-left: 1.5rem; border-left: 3px solid #374151; }
-        .push-item h4 { color: var(--amazon-orange); margin: 0 0 0.5rem 0; font-size: 1.3rem; font-family: 'Outfit'; }
-
-        /* CTAs */
-        .cta-btn {
-            background: var(--amazon-orange);
-            color: #111;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: inline-block;
+            margin-top: 4rem;
             text-align: center;
-            border: none;
-            width: 100%;
-            transition: all 0.2s;
-            box-shadow: 0 4px 0 #cc7a00;
-        }
-        .cta-btn:hover { background: var(--amazon-orange-hover); transform: translateY(-2px); box-shadow: 0 6px 0 #cc7a00; }
-        
-        .sticky-footer {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: white; border-top: 1px solid #DDD;
-            padding: 12px 6%; z-index: 2000;
-            display: none; box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
-            justify-content: space-between; align-items: center;
         }
 
         @media (max-width: 768px) {
-            .atf-anchor, .card-layout { grid-template-columns: 1fr; flex-direction: column; }
-            .card-img { width: 100%; }
-            .card-img img { height: 220px; }
-            h1 { font-size: 1.8rem; }
-            .sticky-footer { display: flex !important; }
-            .sticky-text { display: none; }
+            h1 { font-size: 2rem; }
+            .article-card { padding: 2rem 6%; }
         }
     </style>
 </head>
@@ -154,24 +74,17 @@
     <main>
         <article class="article-card">
             <h1>{{ h1 }}</h1>
-            {{ anchor_block }}
+            {{ atf_box }}
             <div class="article-body">
                 {{ content }}
             </div>
-            {{ final_decision }}
+            
+            <div class="footer-cta">
+                <h2>¿Listo para mejorar tu aire?</h2>
+                <p>No dejes que una mala elección afecte a tu salud o a tu presupuesto.</p>
+                <a href="{{ best_link }}" style="display:inline-block; background:#FF9900; color:white; padding:18px 45px; border-radius:8px; text-decoration:none; font-weight:800; font-size:1.2rem; margin-top:1.5rem;">Ver oferta actual de {{ best_name }}</a>
+            </div>
         </article>
     </main>
-
-    <div class="sticky-footer" id="stickyFooter">
-        <div class="sticky-text"><strong style="color:var(--accent-red)">Oferta hoy:</strong> {{ best_name }} está en stock limitado.</div>
-        <div style="width: 250px;"><a href="{{ best_link }}" class="cta-btn" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Ver precio en Amazon</a></div>
-    </div>
-
-    <script>
-        window.onscroll = function() {
-            var footer = document.getElementById("stickyFooter");
-            if (window.scrollY > 1000) { footer.style.display = "flex"; } else { footer.style.display = "none"; }
-        };
-    </script>
 </body>
 </html>

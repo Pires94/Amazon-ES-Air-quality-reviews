@@ -28,5 +28,12 @@
     "slug": "purificador-aire-habitacion-pequena",
     "title": "Purificador de Aire para Espacios Pequeños",
     "cluster": "purificadores"
+  },
+  {
+    "slug": "purificador-aire-barato-2024",
+    "title": "Purificadores Baratos que SÍ Funcionan",
+    "cluster": "purificadores",
+    "intent": "barato",
+    "desc": "Opciones económicas sin sacrificar la salud de tu aire."
   }
 ]
