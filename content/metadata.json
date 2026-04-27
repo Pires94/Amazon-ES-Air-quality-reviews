@@ -2,12 +2,16 @@
   {
     "slug": "purificador-aire-alergias",
     "title": "Mejor Purificador para Alergias",
-    "cluster": "purificadores"
+    "cluster": "purificadores",
+    "intent": "alergias",
+    "desc": "Filtración HEPA certificada que elimina el polvo en suspensión, ácaros y pólenes al 99.97%."
   },
   {
     "slug": "purificador-aire-silencioso-noite",
     "title": "Purificador Silencioso para Dormir",
-    "cluster": "purificadores"
+    "cluster": "purificadores",
+    "intent": "silencioso",
+    "desc": "Descanso ininterrumpido. Dispositivos certificados para funcionar por debajo de los 25dB."
   },
   {
     "slug": "purificador-aire-100-euros",
@@ -17,12 +21,16 @@
   {
     "slug": "deshumidificador-casa-humeda",
     "title": "Eliminar Humedad en Casa",
-    "cluster": "deshumidificadores"
+    "cluster": "deshumidificadores",
+    "intent": "casa",
+    "desc": "Arranca el moho y la condensación de raíz con compresores de extracción agresiva."
   },
   {
     "slug": "deshumidificador-bano-pequeno",
     "title": "Mejor Deshumidificador para Baño",
-    "cluster": "deshumidificadores"
+    "cluster": "deshumidificadores",
+    "intent": "bano",
+    "desc": "Aparatos compactos para evitar que tus paredes lloren después de cada ducha caliente."
   },
   {
     "slug": "purificador-aire-habitacion-pequena",
@@ -34,6 +42,6 @@
     "title": "Purificadores Baratos que SÍ Funcionan",
     "cluster": "purificadores",
     "intent": "barato",
-    "desc": "Opciones económicas sin sacrificar la salud de tu aire."
+    "desc": "No tires tu dinero. Análisis de los pocos modelos económicos que tienen filtros HEPA reales."
   }
 ]
