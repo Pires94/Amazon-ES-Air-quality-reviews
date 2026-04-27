@@ -127,7 +127,7 @@ class AuthorityGenerator:
         return f"""<div style="background:{border_color}; border:2px solid {strong_border}; border-radius:8px; padding:2rem; margin:2.5rem 0; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05); font-family:sans-serif; position:relative;">
             <div style="position:absolute; top:-12px; left:20px; background:{badge_bg}; color:{badge_txt}; padding:4px 12px; font-size:0.8rem; font-weight:800; text-transform:uppercase; border-radius:4px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">{prod['badge']}</div>
             <div style="display:grid; grid-template-columns: 240px 1fr; gap:2rem;">
-                <div style="background:white; border-radius:8px; overflow:hidden; border:1px solid #e5e7eb; padding:10px;"><img src="{img_url}" alt="{prod['name']}" style="width:100%; height:200px; object-fit:contain;"></div>
+                <div style="background:white; border-radius:12px; overflow:hidden; border:1px solid #e5e7eb; padding:0;"><img src="{img_url}" alt="{prod['name']}" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;"></div>
                 <div>
                     <h3 style="margin:5px 0 15px 0; font-size:1.5rem; color:#111;">{prod['name']}</h3>
                     <p style="background:white; padding:8px 12px; border-radius:6px; font-size:0.9rem; border-left:3px solid #3b82f6; display:inline-block; margin:0 0 1rem 0;"><strong>Valoración de uso:</strong> {prod['social']}</p>
@@ -150,9 +150,9 @@ class AuthorityGenerator:
                     <div><span style="background:#FF9900; color:#111; padding:6px 12px; border-radius:4px; font-weight:800; font-size:0.85rem; letter-spacing:0.5px;">🔥 MEJOR OPCIÓN GENERAL</span>
                     <h2 style="margin:1.2rem 0; font-size:2.2rem; line-height:1.2;">{b['name']}</h2>
                     <p style="font-size:1.1rem; color:#4b5563; font-weight:500;">{b['reason']} Destaca por su fiabilidad en el uso diario continuado.</p>
-                    <div style="margin-top:1.5rem;"><a href="{b['link']}" style="display:inline-block; background:#FFD814; border:1px solid #FCD200; color:#0F1111; padding:16px 32px; border-radius:8px; text-decoration:none; font-weight:800; font-size:1.1rem; transition:transform 0.2s; box-shadow:0 2px 5px rgba(0,0,0,0.1);">Ver precio antes de que cambie →</a></div>
+                    <div style="margin-top:1.5rem;"><a href="{b['link']}" style="display:inline-block; background:#FFD814; border:1px solid #FCD200; color:#0F1111; padding:16px 32px; border-radius:8px; text-decoration:none; font-weight:800; font-size:1.1rem; transition:transform 0.2s; box-shadow:0 2px 5px rgba(0,0,0,0.1);">Ver precio ahora →</a></div>
                     <p style="font-size:0.8rem; color:#6b7280; margin-top:10px;">⭐ Una de las opciones más elegidas por los usuarios este mes</p>
-                    </div><div><img src="{img_hero}" style="width:100%; border-radius:8px; border:1px solid #e5e7eb; background:white; padding:10px;"></div></div>"""
+                    </div><div style="padding:0;"><img src="{img_hero}" alt="{b['name']}" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border:1px solid #e5e7eb;"></div></div>"""
                 
                 content = f"""
                     <div class="authority-block"><h4>🔍 Qué hemos tenido en cuenta</h4><p>Para esta guía hemos analizado la precisión real de los sensores, el nivel de ruido en decibelios durante la noche, y el coste operativo a largo plazo. No nos basamos en especificaciones comerciales, sino en estrés térmico y simulaciones de alergia en entornos reales de 20-40 metros cuadrados.</p></div>
@@ -207,8 +207,8 @@ class AuthorityGenerator:
         cards = ""
         for a in self.metadata[1:]:
             img = self.get_img(a.get('intent', 'alergias'))
-            cards += f"""<a href="articles/{a['slug']}.html" style="background:white; border:1px solid #e5e7eb; border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; transition:transform 0.2s, box-shadow 0.2s; box-shadow:0 1px 3px rgba(0,0,0,0.1); display:flex; flex-direction:column;">
-                <img src="{img}" style="width:100%; height:200px; object-fit:cover; border-bottom:1px solid #f3f4f6;">
+            cards += f"""<a href="articles/{a['slug']}.html" style="background:white; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; transition:transform 0.2s, box-shadow 0.2s; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); display:flex; flex-direction:column;">
+                <div style="padding:0;"><img src="{img}" alt="{a['title']}" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0;"></div>
                 <div style="padding:1.5rem; flex-grow:1; display:flex; flex-direction:column;">
                     <div style="font-size:0.75rem; color:#2563eb; font-weight:800; text-transform:uppercase; margin-bottom:8px;">✔️ Guía de Compra Verificada</div>
                     <h3 style="margin:0 0 10px 0; color:#111827; font-size:1.25rem;">{a['title']}</h3>
@@ -232,7 +232,7 @@ class AuthorityGenerator:
                         <p style="color:#4b5563; font-size:1.1rem; line-height:1.6; margin-bottom:2rem;">{featured.get('desc', 'Mejores soluciones recomendadas por el equipo de expertos.')}</p>
                         <div><a href="articles/{featured['slug']}.html" style="display:inline-block; background:#2563eb; color:white; padding:16px 36px; border-radius:8px; text-decoration:none; font-weight:700; font-size:1.1rem; box-shadow:0 4px 6px -1px rgba(37,99,235,0.3); transition:all 0.2s;">Leer el Análisis Definitivo &rarr;</a></div>
                     </div>
-                    <div style="background:url('{feat_img}') center/cover;"></div>
+                    <div style="padding:0; height:100%;"><img src="{feat_img}" alt="{featured['title']}" loading="lazy" style="width: 100%; height: 100%; min-height: 200px; object-fit: cover; border-radius: 0 12px 12px 0; display:block;"></div>
                 </div>
                 <h2 style="font-family:'Outfit'; font-size:2rem; margin:0 0 2rem 0; border-bottom:2px solid #e5e7eb; padding-bottom:1rem;">Todas las Investigaciones del Taller</h2>
                 <div class="grid">{cards}</div>
