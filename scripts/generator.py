@@ -15,15 +15,15 @@ class AuthorityGenerator:
     def __init__(self):
         self.metadata = self.load_json(METADATA_FILE, [])
         self.article_template = self.load_file(TEMPLATES_DIR / "article.html")
-        # Deterministic Keyword Mapping for Images
+        # Verified Amazon Media Image IDs for Real Products
         self.img_map = {
-            "purificadores": "1585771724684-2626ef7a8963",
-            "deshumidificadores": "1591147055011-8cc5c478a06e",
-            "alergias": "1585771724684-2626ef7a8963",
-            "silencioso": "1632928274371-878938e4d825",
-            "barato": "1632733152643-41bbd011f06f",
-            "bano": "1585642875141-8f5539498263",
-            "casa": "1621230182745-f0e2270c2941"
+            "purificadores": "71861TI5gOL",
+            "deshumidificadores": "51WpiRLRn9L",
+            "alergias": "71861TI5gOL",
+            "silencioso": "71861TI5gOL",  # Mapping to Levoit as it is the silent king
+            "barato": "61zNsy+PnqL",      # Mapping to Xiaomi budget model
+            "bano": "51PAdzNk09L",        # Mapping to Pro Breeze
+            "casa": "51WpiRLRn9L"         # Mapping to DeLonghi
         }
         self.products = {
             "purificadores": [
@@ -103,8 +103,8 @@ class AuthorityGenerator:
         with open(path, 'w', encoding='utf-8') as f: f.write(content)
 
     def get_img_url(self, intent):
-        photo_id = self.img_map.get(intent, "1585771724684-2626ef7a8963")
-        return f"https://images.unsplash.com/photo-{photo_id}?auto=format&fit=crop&w=800&q=80"
+        image_id = self.img_map.get(intent, "71861TI5gOL")
+        return f"https://m.media-amazon.com/images/I/{image_id}._AC_SL800_.jpg"
 
     def gen_product_block(self, prod, category):
         img_url = self.get_img_url(category)
